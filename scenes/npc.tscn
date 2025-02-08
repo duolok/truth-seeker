@@ -1,0 +1,51 @@
+[gd_scene load_steps=7 format=3 uid="uid://86l8qx2e2jpp"]
+
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_6el2c"]
+[ext_resource type="Texture2D" uid="uid://ywkokoe28ker" path="res://assets/sprites/cica/cica_sprite_sheet.png" id="2_8qolv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m0ce8"]
+size = Vector2(14.265, 28.04)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_actng"]
+atlas = ExtResource("2_8qolv")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3uxqk"]
+atlas = ExtResource("2_8qolv")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_luy1l"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_actng")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3uxqk")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}]
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+position = Vector2(0, -100)
+script = ExtResource("1_6el2c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(1.18, 1.18)
+shape = SubResource("RectangleShape2D_m0ce8")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_luy1l")
+autoplay = "default"
