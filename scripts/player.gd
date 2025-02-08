@@ -9,8 +9,8 @@ const DASH_DURATION = 0.2
 const GRAVITY = 700  
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
-
 @onready var actionable_finder: Area2D = $Direction/ActionableFinder
+
 var jump_count = 0
 var is_dashing = false
 var is_flipped : bool

@@ -1,10 +1,43 @@
-[gd_scene load_steps=9 format=3 uid="uid://d2xpxh1fcaoww"]
+[gd_scene load_steps=10 format=3 uid="uid://di8u2mtatwdsh"]
 
-[ext_resource type="PackedScene" uid="uid://d0li5nuniam74" path="res://scenes/npc.tscn" id="3_gf6q1"]
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_yubbt"]
+[ext_resource type="Texture2D" uid="uid://ywkokoe28ker" path="res://assets/sprites/cica/cica_sprite_sheet.png" id="3_a8e7m"]
 [ext_resource type="Texture2D" uid="uid://dvjsh0d0hl1el" path="res://assets/redblock.png" id="3_l5xca"]
-[ext_resource type="PackedScene" uid="uid://c7kii3xi7xfs2" path="res://scenes/actionable.tscn" id="4_hwjlb"]
-[ext_resource type="PackedScene" uid="uid://d3be0rvxbeml2" path="res://scenes/player.tscn" id="5_e0fy5"]
-[ext_resource type="Resource" uid="uid://dqyv5k6bmts8u" path="res://assets/dialogue/dialogue1.dialogue" id="5_vlc6d"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_actng"]
+atlas = ExtResource("3_a8e7m")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3uxqk"]
+atlas = ExtResource("3_a8e7m")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_luy1l"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_actng")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3uxqk")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m0ce8"]
+size = Vector2(22.8814, 22.2642)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_03sdx"]
 texture = ExtResource("3_l5xca")
@@ -38,13 +71,28 @@ texture = ExtResource("3_l5xca")
 3:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
 [sub_resource type="TileSet" id="TileSet_5vyj1"]
-physics_layer_0/collision_layer = 9
+physics_layer_0/collision_layer = 1
 sources/1 = SubResource("TileSetAtlasSource_03sdx")
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_gcyr1"]
-radius = 24.0832
-
 [node name="Node2D" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2.055, 2.055)
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+position = Vector2(-1, -35)
+script = ExtResource("1_yubbt")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+position = Vector2(1, 3.75)
+scale = Vector2(0.875, 0.796875)
+sprite_frames = SubResource("SpriteFrames_luy1l")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(2, 4)
+scale = Vector2(1.18, 1.18)
+shape = SubResource("RectangleShape2D_m0ce8")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_5vyj1")
