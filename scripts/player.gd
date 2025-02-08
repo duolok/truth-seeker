@@ -50,6 +50,7 @@ func _physics_process(delta: float) -> void:
 	var current_speed = SPEED
 	if Input.is_action_pressed("ui_sprint"):
 		current_speed *= SPRINT_MULTIPLIER
+		animated_sprite_2d.play("run")
 
 	var input_direction = Input.get_axis("ui_left", "ui_right")
 	if not is_dashing:
