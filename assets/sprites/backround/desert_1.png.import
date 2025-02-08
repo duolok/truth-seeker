@@ -2,7 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<< HEAD
 uid="uid://bqhdsvptb51nx"
+=======
+uid="uid://cq4eqnl7mkfhu"
+>>>>>>> 071436b (fix: ayo)
 path="res://.godot/imported/desert_1.png-f40c29df6057b8a08d198f1d4330e177.ctex"
 metadata={
 "vram_texture": false

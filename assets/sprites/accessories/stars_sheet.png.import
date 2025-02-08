@@ -2,7 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<< HEAD
 uid="uid://cusw0jf8yhqja"
+=======
+uid="uid://cryqqr7b50rxr"
+>>>>>>> 071436b (fix: ayo)
 path="res://.godot/imported/stars_sheet.png-f3590d355c12486d513ee60f01860717.ctex"
 metadata={
 "vram_texture": false
