@@ -2,7 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<< HEAD
 uid="uid://byvfx071r1wk0"
+=======
+uid="uid://8kf0chugjgab"
+>>>>>>> 7400f31 (add: randy assets)
 path="res://.godot/imported/desert_1.png-f40c29df6057b8a08d198f1d4330e177.ctex"
 metadata={
 "vram_texture": false
