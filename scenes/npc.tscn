@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://d0li5nuniam74"]
+[gd_scene load_steps=10 format=3 uid="uid://d0li5nuniam74"]
 
 [ext_resource type="Script" path="res://scripts/npc.gd" id="1_0px5a"]
 [ext_resource type="Texture2D" uid="uid://ywkokoe28ker" path="res://assets/sprites/cica/cica_sprite_sheet.png" id="2_8qolv"]
 [ext_resource type="PackedScene" uid="uid://c7kii3xi7xfs2" path="res://scenes/actionable.tscn" id="3_sd6tm"]
+[ext_resource type="PackedScene" uid="uid://num0nr0h6iyt" path="res://scenes/interaction_area.tscn" id="4_6w5cj"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_actng"]
 atlas = ExtResource("2_8qolv")
@@ -60,3 +61,6 @@ shape = SubResource("RectangleShape2D_2kbb8")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 2)
 shape = SubResource("RectangleShape2D_igkxl")
+
+[node name="InteractionArea" parent="." instance=ExtResource("4_6w5cj")]
+collision_mask = 2
