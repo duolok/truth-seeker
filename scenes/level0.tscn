@@ -55,6 +55,17 @@ texture = ExtResource("2_bk2d1")
 scale = Vector2(1.18, 1.18)
 shape = SubResource("CircleShape2D_18cu2")
 
+[node name="CharacterBody2D3" type="CharacterBody2D" parent="."]
+position = Vector2(0, -100)
+script = ExtResource("1_yubbt")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D3"]
+texture = ExtResource("2_bk2d1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D3"]
+scale = Vector2(1.18, 1.18)
+shape = SubResource("CircleShape2D_18cu2")
+
 [node name="CharacterBody2D2" type="CharacterBody2D" parent="."]
 position = Vector2(100, -98.935)
 script = ExtResource("3_bfyak")
