@@ -66,4 +66,5 @@ position = Vector2(0.255102, -0.765305)
 shape = SubResource("RectangleShape2D_ncmix")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(2.14, 2.14)
+offset = Vector2(0, -25)
+zoom = Vector2(3.145, 3.145)
