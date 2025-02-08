@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://d3be0rvxbeml2"]
+[gd_scene load_steps=15 format=3 uid="uid://bc6dsoh82ddqq"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_j5riv"]
 [ext_resource type="Texture2D" uid="uid://bpbcx8burf5nt" path="res://assets/sprites/player/astronaut_sheet.png" id="2_1yv8i"]
@@ -14,6 +14,34 @@ region = Rect2(0, 0, 32, 32)
 atlas = ExtResource("2_1yv8i")
 region = Rect2(32, 0, 32, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_yefti"]
+atlas = ExtResource("2_1yv8i")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1rgkh"]
+atlas = ExtResource("2_1yv8i")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uxopn"]
+atlas = ExtResource("2_1yv8i")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cs7er"]
+atlas = ExtResource("2_1yv8i")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w66pm"]
+atlas = ExtResource("2_1yv8i")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yyrc3"]
+atlas = ExtResource("2_1yv8i")
+region = Rect2(96, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mi0qj"]
+atlas = ExtResource("2_1yv8i")
+region = Rect2(128, 32, 32, 32)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_luy1l"]
 animations = [{
 "frames": [{
@@ -25,6 +53,37 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yefti")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1rgkh")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uxopn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cs7er")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w66pm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yyrc3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mi0qj")
+}],
+"loop": true,
+"name": &"jump",
 "speed": 5.0
 }, {
 "frames": [],
@@ -51,8 +110,8 @@ shape = SubResource("RectangleShape2D_m0ce8")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_luy1l")
-autoplay = "default"
-frame_progress = 0.954387
+animation = &"idle"
+autoplay = "idle"
 
 [node name="Direction" type="Marker2D" parent="."]
 
@@ -66,4 +125,4 @@ position = Vector2(0.5, -1.5)
 shape = SubResource("RectangleShape2D_ncmix")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(2.14, 2.14)
+zoom = Vector2(4, 4)
