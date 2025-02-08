@@ -1,8 +1,9 @@
-[gd_scene load_steps=27 format=3 uid="uid://d3be0rvxbeml2"]
+[gd_scene load_steps=28 format=3 uid="uid://d3be0rvxbeml2"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_j5riv"]
 [ext_resource type="Texture2D" uid="uid://bpbcx8burf5nt" path="res://assets/sprites/player/astronaut_sheet.png" id="2_1yv8i"]
 [ext_resource type="Script" path="res://scenes/camera_2d.gd" id="3_wpxak"]
+[ext_resource type="Texture2D" uid="uid://b6o44kn51e2v6" path="res://assets/sprites/light.png" id="4_crni6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m0ce8"]
 size = Vector2(14.265, 28.04)
@@ -226,3 +227,14 @@ shape = SubResource("RectangleShape2D_ncmix")
 offset = Vector2(0, -25)
 zoom = Vector2(3.145, 3.145)
 script = ExtResource("3_wpxak")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(1.19209e-07, -1)
+scale = Vector2(1.97233, 1.78499)
+color = Color(0.627451, 0.627451, 0.627451, 1)
+energy = 0.79
+shadow_enabled = true
+shadow_filter = 1
+shadow_filter_smooth = 3.0
+texture = ExtResource("4_crni6")
+texture_scale = 0.59

@@ -6,11 +6,14 @@ const JUMP_VELOCITY = -280
 const MAX_JUMPS = 2  
 const DASH_SPEED = 400
 const DASH_DURATION = 0.2
-const GRAVITY = 700  
+const GRAVITY = 700 
+const SHAKE_STRENGHT = 1.5   
 
+@onready var camera: Camera2D = $Camera2D
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var actionable_finder: Area2D = $Direction/ActionableFinder
 
+var in_air = false
 var jump_count = 0
 var is_dashing = false
 var is_flipped : bool
@@ -37,6 +40,12 @@ func _physics_process(delta: float) -> void:
 	if is_on_floor():
 		jump_count = 0
 		animated_sprite_2d.play("idle")
+		if in_air:
+			in_air = false
+			camera.start_shake(SHAKE_STRENGHT, 1)
+	else:
+		in_air = true
+		
 		
 	if is_on_floor() and Input.is_action_just_pressed("ui_dash") :
 		jump_count = 0
