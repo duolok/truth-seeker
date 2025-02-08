@@ -185,5 +185,22 @@ collision_mask = 3
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
 shape = SubResource("WorldBoundaryShape2D_cpttf")
 
+[node name="lecic" parent="." instance=ExtResource("5_qi7n1")]
+position = Vector2(100, -300)
+up_direction = Vector2(1, -1e-05)
+dialogue_id = "dusan"
+
 [node name="npc" parent="." instance=ExtResource("5_qi7n1")]
 dialogue_id = "start"
+
+[node name="ognjen" parent="." instance=ExtResource("5_qi7n1")]
+position = Vector2(300, -100)
+dialogue_id = "ognjen"
+
+[node name="djurica" parent="." instance=ExtResource("5_qi7n1")]
+position = Vector2(430, -100)
+dialogue_id = "djurica"
+
+[node name="celar" parent="." instance=ExtResource("5_qi7n1")]
+position = Vector2(200, -200)
+dialogue_id = "celar"
