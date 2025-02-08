@@ -1,9 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://d0li5nuniam74"]
+[gd_scene load_steps=9 format=3 uid="uid://d0li5nuniam74"]
 
 [ext_resource type="Script" path="res://scripts/npc.gd" id="1_0px5a"]
 [ext_resource type="Texture2D" uid="uid://ywkokoe28ker" path="res://assets/sprites/cica/cica_sprite_sheet.png" id="2_8qolv"]
 [ext_resource type="PackedScene" uid="uid://c7kii3xi7xfs2" path="res://scenes/actionable.tscn" id="3_sd6tm"]
-[ext_resource type="PackedScene" uid="uid://num0nr0h6iyt" path="res://scenes/interaction_area.tscn" id="4_6w5cj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m0ce8"]
+size = Vector2(14.265, 28.04)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_actng"]
 atlas = ExtResource("2_8qolv")
@@ -40,13 +42,14 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2kbb8"]
 size = Vector2(20, 36)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_igkxl"]
-size = Vector2(20, 28)
-
 [node name="CharacterBody2D" type="CharacterBody2D"]
 position = Vector2(0, -100)
 collision_layer = 2
 script = ExtResource("1_0px5a")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(1.18, 1.18)
+shape = SubResource("RectangleShape2D_m0ce8")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_luy1l")
@@ -55,12 +58,4 @@ autoplay = "default"
 [node name="Actionable2" parent="." instance=ExtResource("3_sd6tm")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Actionable2"]
-visibility_layer = 0
 shape = SubResource("RectangleShape2D_2kbb8")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 2)
-shape = SubResource("RectangleShape2D_igkxl")
-
-[node name="InteractionArea" parent="." instance=ExtResource("4_6w5cj")]
-collision_mask = 4

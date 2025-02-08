@@ -1,7 +1,8 @@
-[gd_scene load_steps=26 format=3 uid="uid://bc6dsoh82ddqq"]
+[gd_scene load_steps=27 format=3 uid="uid://d3be0rvxbeml2"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_j5riv"]
 [ext_resource type="Texture2D" uid="uid://bpbcx8burf5nt" path="res://assets/sprites/player/astronaut_sheet.png" id="2_1yv8i"]
+[ext_resource type="Script" path="res://scenes/camera_2d.gd" id="3_wpxak"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m0ce8"]
 size = Vector2(14.265, 28.04)
@@ -194,10 +195,11 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ncmix"]
-size = Vector2(47, 43)
+size = Vector2(16.8367, 22.9592)
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 position = Vector2(0, -100)
+collision_layer = 6
 script = ExtResource("1_j5riv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -213,12 +215,14 @@ autoplay = "run"
 
 [node name="ActionableFinder" type="Area2D" parent="Direction"]
 scale = Vector2(1.96, 1.96)
-collision_layer = 16
+collision_layer = 4
 collision_mask = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Direction/ActionableFinder"]
-position = Vector2(0.5, -1.5)
+position = Vector2(0.255102, -0.765305)
 shape = SubResource("RectangleShape2D_ncmix")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(4, 4)
+offset = Vector2(0, -25)
+zoom = Vector2(3.145, 3.145)
+script = ExtResource("3_wpxak")
