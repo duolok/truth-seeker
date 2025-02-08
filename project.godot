@@ -11,8 +11,13 @@ config_version=5
 [application]
 
 config/name="TruthSeeker"
+run/main_scene="res://scenes/level0.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
+
+[dotnet]
+
+project/assembly_name="TruthSeeker"
 
 [rendering]
 

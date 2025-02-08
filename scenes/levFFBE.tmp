@@ -1,34 +1,6 @@
-[gd_scene load_steps=11 format=3 uid="uid://bgcpm7jagfsai"]
+[gd_scene load_steps=4 format=3 uid="uid://bgcpm7jagfsai"]
 
-[ext_resource type="Script" path="res://scripts/player.gd" id="1_yubbt"]
-[ext_resource type="Texture2D" uid="uid://dir5033ggeqn4" path="res://assets/sprites/cica/Idle_1.png" id="2_bk2d1"]
-[ext_resource type="Texture2D" uid="uid://ywkokoe28ker" path="res://assets/sprites/cica/cica_sprite_sheet.png" id="3_a8e7m"]
 [ext_resource type="Texture2D" uid="uid://dvjsh0d0hl1el" path="res://assets/redblock.png" id="3_l5xca"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_18cu2"]
-radius = 15.3481
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_actng"]
-atlas = ExtResource("3_a8e7m")
-region = Rect2(0, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_3uxqk"]
-atlas = ExtResource("3_a8e7m")
-region = Rect2(32, 0, 32, 32)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_luy1l"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_actng")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_3uxqk")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_03sdx"]
 texture = ExtResource("3_l5xca")
@@ -66,23 +38,6 @@ physics_layer_0/collision_layer = 1
 sources/1 = SubResource("TileSetAtlasSource_03sdx")
 
 [node name="Node2D" type="Node2D"]
-
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
-position = Vector2(0, -100)
-script = ExtResource("1_yubbt")
-
-[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
-visible = false
-texture = ExtResource("2_bk2d1")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-scale = Vector2(1.18, 1.18)
-shape = SubResource("CircleShape2D_18cu2")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
-sprite_frames = SubResource("SpriteFrames_luy1l")
-autoplay = "default"
-frame_progress = 0.268273
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_5vyj1")
