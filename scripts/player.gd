@@ -13,7 +13,7 @@ const SHAKE_STRENGHT = 1.5
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var actionable_finder: Area2D = $Direction/ActionableFinder
 
-var in_air = false
+var should_shake = false
 var jump_count = 0
 var is_dashing = false
 var is_flipped : bool
@@ -40,11 +40,9 @@ func _physics_process(delta: float) -> void:
 	if is_on_floor():
 		jump_count = 0
 		animated_sprite_2d.play("idle")
-		if in_air:
-			in_air = false
+		if should_shake:
 			camera.start_shake(SHAKE_STRENGHT, 1)
-	else:
-		in_air = true
+			should_shake = false
 		
 		
 	if is_on_floor() and Input.is_action_just_pressed("ui_dash") :
@@ -60,6 +58,7 @@ func _physics_process(delta: float) -> void:
 			velocity.y = JUMP_VELOCITY
 			animated_sprite_2d.play("double_jump")
 			jump_count += 1
+			should_shake = true
 
 	var current_speed = SPEED
 	if Input.is_action_pressed("ui_sprint"):
