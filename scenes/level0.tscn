@@ -55,7 +55,6 @@ layer_0/tile_data = PackedInt32Array(65532, 65537, 0, 65533, 65537, 0, 65534, 13
 [node name="npc" parent="." instance=ExtResource("3_gf6q1")]
 
 [node name="Actionable" parent="npc" instance=ExtResource("4_hwjlb")]
-collision_layer = 16
 collision_mask = 16
 dialogue_resource = ExtResource("5_vlc6d")
 
