@@ -36,10 +36,12 @@ func _physics_process(delta: float) -> void:
 
 	if is_on_floor():
 		jump_count = 0
+		animated_sprite_2d.play("idle")
 
 	if Input.is_action_just_pressed("ui_up"):
 		if is_on_floor():
 			velocity.y = JUMP_VELOCITY
+			animated_sprite_2d.play("jump")
 			jump_count += 1
 		elif jump_count < MAX_JUMPS:
 			velocity.y = JUMP_VELOCITY
