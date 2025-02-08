@@ -40,6 +40,7 @@ animations = [{
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 position = Vector2(0, -100)
+collision_layer = 2
 script = ExtResource("1_0px5a")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

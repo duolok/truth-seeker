@@ -1,7 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://c0ipvfvhrpxo6"]
+[gd_scene load_steps=12 format=3 uid="uid://bgcpm7jagfsai"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_yubbt"]
+[ext_resource type="PackedScene" uid="uid://bdnqim21mamfr" path="res://scenes/interaction_area.tscn" id="2_i3axv"]
 [ext_resource type="Texture2D" uid="uid://ywkokoe28ker" path="res://assets/sprites/cica/cica_sprite_sheet.png" id="3_a8e7m"]
+[ext_resource type="PackedScene" uid="uid://d0li5nuniam74" path="res://scenes/npc.tscn" id="3_gf6q1"]
 [ext_resource type="Texture2D" uid="uid://dvjsh0d0hl1el" path="res://assets/redblock.png" id="3_l5xca"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_actng"]
@@ -71,16 +73,21 @@ texture = ExtResource("3_l5xca")
 3:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
 [sub_resource type="TileSet" id="TileSet_5vyj1"]
-physics_layer_0/collision_layer = 1
+physics_layer_0/collision_layer = 8
 sources/1 = SubResource("TileSetAtlasSource_03sdx")
 
 [node name="Node2D" type="Node2D"]
 
-[node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(2.055, 2.055)
+[node name="CharacterBody2D2" parent="." instance=ExtResource("3_gf6q1")]
+position = Vector2(94, -35)
+collision_mask = 72
+
+[node name="InteractionArea" parent="CharacterBody2D2" instance=ExtResource("2_i3axv")]
+collision_layer = 16
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 position = Vector2(-1, -35)
+collision_mask = 29
 script = ExtResource("1_yubbt")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
@@ -93,6 +100,10 @@ autoplay = "default"
 position = Vector2(2, 4)
 scale = Vector2(1.18, 1.18)
 shape = SubResource("RectangleShape2D_m0ce8")
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+position = Vector2(1, 35)
+zoom = Vector2(4, 4)
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_5vyj1")

@@ -50,3 +50,6 @@ shape = SubResource("RectangleShape2D_m0ce8")
 sprite_frames = SubResource("SpriteFrames_luy1l")
 autoplay = "default"
 frame_progress = 0.954387
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(4, 4)
