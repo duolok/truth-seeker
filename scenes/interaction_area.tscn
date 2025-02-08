@@ -4,7 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://w3pmp2mdxr1c" path="res://assets/sprites/player/interaction.png" id="2_y71or"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vkgb4"]
-radius = 3.0
+radius = 18.0
+height = 38.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_eq1fp"]
 atlas = ExtResource("2_y71or")

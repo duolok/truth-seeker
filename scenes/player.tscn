@@ -199,7 +199,7 @@ size = Vector2(16.8367, 22.9592)
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 position = Vector2(0, -100)
-collision_layer = 2
+collision_layer = 6
 script = ExtResource("1_j5riv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
