@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-
+@export var dialogue_id: String
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 

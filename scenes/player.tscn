@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://d3be0rvxbeml2"]
+[gd_scene load_steps=9 format=3 uid="uid://d3be0rvxbeml2"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_j5riv"]
 [ext_resource type="Texture2D" uid="uid://bpbcx8burf5nt" path="res://assets/sprites/player/astronaut_sheet.png" id="2_1yv8i"]
+[ext_resource type="Script" path="res://scenes/camera_2d.gd" id="3_wpxak"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m0ce8"]
 size = Vector2(14.265, 28.04)
@@ -68,3 +69,4 @@ shape = SubResource("RectangleShape2D_ncmix")
 [node name="Camera2D" type="Camera2D" parent="."]
 offset = Vector2(0, -25)
 zoom = Vector2(3.145, 3.145)
+script = ExtResource("3_wpxak")
