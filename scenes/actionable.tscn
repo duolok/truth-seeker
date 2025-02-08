@@ -4,5 +4,7 @@
 [ext_resource type="Resource" uid="uid://1t0g6hmlkf8p" path="res://assets/dialogue/dialogue.dialogue" id="2_15cbg"]
 
 [node name="Actionable" type="Area2D"]
+collision_layer = 16
+collision_mask = 17
 script = ExtResource("1_5c0gr")
 dialogue_resource = ExtResource("2_15cbg")

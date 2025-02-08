@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://d0li5nuniam74"]
+[gd_scene load_steps=9 format=3 uid="uid://d0li5nuniam74"]
 
 [ext_resource type="Script" path="res://scripts/npc.gd" id="1_0px5a"]
 [ext_resource type="Texture2D" uid="uid://ywkokoe28ker" path="res://assets/sprites/cica/cica_sprite_sheet.png" id="2_8qolv"]
+[ext_resource type="PackedScene" uid="uid://c7kii3xi7xfs2" path="res://scenes/actionable.tscn" id="3_sd6tm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m0ce8"]
 size = Vector2(14.265, 28.04)
@@ -38,6 +39,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2kbb8"]
+size = Vector2(20, 36)
+
 [node name="CharacterBody2D" type="CharacterBody2D"]
 position = Vector2(0, -100)
 collision_layer = 2
@@ -50,3 +54,8 @@ shape = SubResource("RectangleShape2D_m0ce8")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_luy1l")
 autoplay = "default"
+
+[node name="Actionable2" parent="." instance=ExtResource("3_sd6tm")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Actionable2"]
+shape = SubResource("RectangleShape2D_2kbb8")

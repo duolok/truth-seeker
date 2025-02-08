@@ -20,14 +20,11 @@ var dash_direction = Vector2.ZERO
 func _physics_process(delta: float) -> void:
 	if not is_on_floor() and !is_dashing:
 		velocity.y += GRAVITY * delta
-
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
+		
 	if Input.is_action_just_pressed("ui_accept"):
 		var actionables = actionable_finder.get_overlapping_areas()
 		print(actionables)
 		if actionables.size() > 0:
-			print("overlapping")
 			actionables[0].action()
 			
 			
