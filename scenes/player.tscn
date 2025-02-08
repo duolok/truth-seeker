@@ -1,27 +1,27 @@
-[gd_scene load_steps=7 format=3 uid="uid://d0li5nuniam74"]
+[gd_scene load_steps=7 format=3 uid="uid://d3be0rvxbeml2"]
 
-[ext_resource type="Script" path="res://scripts/npc.gd" id="1_0px5a"]
-[ext_resource type="Texture2D" uid="uid://ywkokoe28ker" path="res://assets/sprites/cica/cica_sprite_sheet.png" id="2_8qolv"]
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_j5riv"]
+[ext_resource type="Texture2D" uid="uid://bpbcx8burf5nt" path="res://assets/sprites/player/astronaut_sheet.png" id="2_1yv8i"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m0ce8"]
 size = Vector2(14.265, 28.04)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_actng"]
-atlas = ExtResource("2_8qolv")
+[sub_resource type="AtlasTexture" id="AtlasTexture_g7w1p"]
+atlas = ExtResource("2_1yv8i")
 region = Rect2(0, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_3uxqk"]
-atlas = ExtResource("2_8qolv")
+[sub_resource type="AtlasTexture" id="AtlasTexture_8pb1y"]
+atlas = ExtResource("2_1yv8i")
 region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_luy1l"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_actng")
+"texture": SubResource("AtlasTexture_g7w1p")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_3uxqk")
+"texture": SubResource("AtlasTexture_8pb1y")
 }],
 "loop": true,
 "name": &"default",
@@ -40,7 +40,7 @@ animations = [{
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 position = Vector2(0, -100)
-script = ExtResource("1_0px5a")
+script = ExtResource("1_j5riv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(1.18, 1.18)
@@ -49,3 +49,4 @@ shape = SubResource("RectangleShape2D_m0ce8")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_luy1l")
 autoplay = "default"
+frame_progress = 0.954387
