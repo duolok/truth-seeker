@@ -5,7 +5,7 @@ const SPRINT_MULTIPLIER = 1.5
 const JUMP_VELOCITY = -280
 const MAX_JUMPS = 2  
 const DASH_SPEED = 400
-const DASH_DURATION = 0.2  
+const DASH_DURATION = 0.2
 const GRAVITY = 700  
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
@@ -37,6 +37,10 @@ func _physics_process(delta: float) -> void:
 	if is_on_floor():
 		jump_count = 0
 		animated_sprite_2d.play("idle")
+		
+	if is_on_floor() and Input.is_action_just_pressed("ui_dash") :
+		jump_count = 0
+		animated_sprite_2d.play("dash")
 
 	if Input.is_action_just_pressed("ui_up"):
 		if is_on_floor():
@@ -45,6 +49,7 @@ func _physics_process(delta: float) -> void:
 			jump_count += 1
 		elif jump_count < MAX_JUMPS:
 			velocity.y = JUMP_VELOCITY
+			animated_sprite_2d.play("double_jump")
 			jump_count += 1
 
 	var current_speed = SPEED
@@ -63,6 +68,7 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("ui_dash") and not is_dashing:
 		is_dashing = true
 		dash_time = DASH_DURATION
+		animated_sprite_2d.play("dash")
 
 		if input_direction != 0:
 			dash_direction = Vector2(input_direction, 0).normalized()
