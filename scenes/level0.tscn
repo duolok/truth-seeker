@@ -82,7 +82,7 @@ shape = SubResource("CircleShape2D_18cu2")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
 sprite_frames = SubResource("SpriteFrames_luy1l")
 autoplay = "default"
-frame_progress = 0.268273
+frame_progress = 0.482755
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_5vyj1")
