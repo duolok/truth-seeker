@@ -1,8 +1,8 @@
-[gd_scene load_steps=29 format=3 uid="uid://d3be0rvxbeml2"]
+[gd_scene load_steps=29 format=3 uid="uid://bc6dsoh82ddqq"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_j5riv"]
 [ext_resource type="Texture2D" uid="uid://bpbcx8burf5nt" path="res://assets/sprites/player/astronaut_sheet.png" id="2_1yv8i"]
-[ext_resource type="PackedScene" uid="uid://cqlyqhm6773u8" path="res://scenes/cpu_walking_particles_2d.tscn" id="2_5gp1d"]
+[ext_resource type="PackedScene" path="res://scenes/cpu_walking_particles_2d.tscn" id="2_5gp1d"]
 [ext_resource type="Script" path="res://scenes/camera_2d.gd" id="3_wpxak"]
 [ext_resource type="Texture2D" uid="uid://b6o44kn51e2v6" path="res://assets/sprites/light.png" id="4_crni6"]
 
