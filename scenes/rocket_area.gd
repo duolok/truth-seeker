@@ -35,5 +35,6 @@ func _process(delta: float) -> void:
 		Pass.position.y=screen_size.y/2
 	
 	
-func popup() -> void:
-	canvas_layer.visible=true
+func popup(visible:bool) -> void:
+	canvas_layer.visible=visible
+	

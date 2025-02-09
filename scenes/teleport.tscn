@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://d3ljdoe1qwn30"]
+[gd_scene load_steps=10 format=3 uid="uid://5mcj570kvuls"]
 
 [ext_resource type="Script" path="res://scripts/teleport.gd" id="1_4s81c"]
 [ext_resource type="Texture2D" uid="uid://dgfc40bb1tbea" path="res://assets/sprites/backround/portal_sheet.png" id="2_emnyi"]

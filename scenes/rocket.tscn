@@ -1,10 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://bekoh2k83mo2"]
+[gd_scene load_steps=10 format=3 uid="uid://bnjv6nonakj83"]
 
 [ext_resource type="Texture2D" uid="uid://ba4e1akctfw64" path="res://assets/sprites/player/spaceship.png" id="1_2jixp"]
 [ext_resource type="Script" path="res://scenes/rocket.gd" id="2_avu3x"]
 [ext_resource type="Script" path="res://scenes/rocket_area.gd" id="3_3qwhg"]
 [ext_resource type="FontFile" uid="uid://b3gxby06cxsjq" path="res://assets/fonts/PixelOperator8.ttf" id="4_scshu"]
-[ext_resource type="PackedScene" path="res://scenes/passkey.tscn" id="5_gldie"]
+[ext_resource type="PackedScene" uid="uid://cnbs537klj68n" path="res://scenes/passkey.tscn" id="5_gldie"]
 
 [sub_resource type="Curve" id="Curve_rgv2j"]
 _data = [Vector2(0.0235849, 1), 0.0, 0.0, 0, 0, Vector2(0.186321, 0), 0.0, 0.0, 0, 0]
@@ -26,6 +26,7 @@ size = Vector2(73, 107)
 [node name="rocket" type="Sprite2D"]
 texture = ExtResource("1_2jixp")
 script = ExtResource("2_avu3x")
+metadata/password = 0
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
 position = Vector2(0, 72)
@@ -73,3 +74,4 @@ visible = false
 [node name="pass" parent="CanvasLayer" instance=ExtResource("5_gldie")]
 position = Vector2(581, 326)
 scale = Vector2(3, 3)
+metadata/password = 553
