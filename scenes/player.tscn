@@ -177,14 +177,23 @@ animations = [{
 "texture": SubResource("AtlasTexture_ixu4m")
 }, {
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_ixu4m")
+}, {
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_ejak6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ejak6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5rygf")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_5rygf")
 }],
 "loop": true,
 "name": &"run",
-"speed": 10.0
+"speed": 3.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -209,8 +218,9 @@ shape = SubResource("RectangleShape2D_m0ce8")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_luy1l")
-animation = &"dash"
+animation = &"wall_cling"
 autoplay = "run"
+frame_progress = 0.600822
 
 [node name="Direction" type="Marker2D" parent="."]
 
