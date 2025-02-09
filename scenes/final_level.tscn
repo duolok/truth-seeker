@@ -15173,8 +15173,7 @@ tile_map_data = PackedByteArray("AAD8/wEABAAFAAAAAAD7/wEABAAEAAAAAAD6/wEABAACAAA
 tile_set = SubResource("TileSet_8rq1y")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-visible = false
-color = Color(0.347817, 0.347817, 0.347817, 1)
+color = Color(0.533333, 0.533333, 0.533333, 1)
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 visible = false
@@ -15285,6 +15284,7 @@ horizontal_alignment = 1
 
 [node name="player" parent="." groups=["player"] instance=ExtResource("12_5m3uf")]
 position = Vector2(-219, -42)
+use_light = true
 particle_scene = null
 
 [node name="rocket" parent="." instance=ExtResource("13_cbrk5")]

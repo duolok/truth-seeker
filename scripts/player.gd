@@ -19,6 +19,7 @@ const DASH_COOLDOWN = 0.6
 @onready var actionable_finder: Area2D = $Direction/ActionableFinder
 @onready var point_light: PointLight2D = $PointLight2D
 @onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
+@onready var audio_stream_player_2d_2: AudioStreamPlayer2D = $AudioStreamPlayer2D2
 
 @export var particle_scene: PackedScene
 
@@ -63,6 +64,7 @@ func _physics_process(delta: float) -> void:
 			jump_count = 0
 			if should_shake:
 				camera.start_shake(SHAKE_STRENGHT, 1)
+				audio_stream_player_2d_2.play()
 				should_shake = false
 			
 		if is_on_floor() and Input.is_action_just_pressed("ui_dash") :
