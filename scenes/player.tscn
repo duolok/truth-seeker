@@ -265,8 +265,8 @@ shape = SubResource("RectangleShape2D_m0ce8")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_luy1l")
-animation = &"wall_cling_right"
-autoplay = "run"
+animation = &"idle"
+autoplay = "idle"
 
 [node name="Direction" type="Marker2D" parent="."]
 

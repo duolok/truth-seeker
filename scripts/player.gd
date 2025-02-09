@@ -41,14 +41,12 @@ func _physics_process(delta: float) -> void:
 		jump_count = 0
 		animated_sprite_2d.play("dash")
 
-	if Input.is_action_just_pressed("ui_up"):
+	if Input.is_action_just_pressed("ui_up") and (not is_on_wall() or is_on_floor()):
 		if is_on_floor():
 			velocity.y = JUMP_VELOCITY
-			animated_sprite_2d.play("jump")
 			jump_count += 1
 		elif jump_count < MAX_JUMPS:
 			velocity.y = JUMP_VELOCITY
-			animated_sprite_2d.play("double_jump")
 			jump_count += 1
 			should_shake = true
 			
@@ -57,21 +55,14 @@ func _physics_process(delta: float) -> void:
 	if not is_on_floor() and not is_dashing:
 		velocity.y += GRAVITY * delta
 
-	if !is_on_wall() and !is_on_floor():
-		animated_sprite_2d.play("jump")
-
-
 	if is_on_wall():
-			
 		if Input.is_action_just_pressed("ui_right"):
 			velocity.y = JUMP_VELOCITY * 1.5
 			velocity.x = -WALL_PUSHBACK
-			animated_sprite_2d.play("jump")
 			
 		elif Input.is_action_just_pressed("ui_left"):
 			velocity.y = JUMP_VELOCITY * 1.5
 			velocity.x = WALL_PUSHBACK
-			animated_sprite_2d.play("jump")
 		else:
 			animated_sprite_2d.play("wall_cling_right")
 			
@@ -79,9 +70,13 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("ui_dialogue"):
 		var actionables = actionable_finder.get_overlapping_areas()
 		if actionables.size() > 0:
-			actionables[0].action()
+			if actionables[0].is_in_group("teleport"):
+				actionables[0].teleport(self)
+			else:
+				actionables[0].action()
 
 	var direction = Input.get_axis("ui_left", "ui_right")
+	
 	if direction != 0:
 		velocity.x = direction * SPEED
 	else:
@@ -102,14 +97,12 @@ func _physics_process(delta: float) -> void:
 		else:
 			animated_sprite_2d.play("idle")
 	
-	if Input.is_action_just_pressed("ui_up"):
+	if Input.is_action_just_pressed("ui_up") and (not is_on_wall() or is_on_floor()):
 		if is_on_floor():
 			velocity.y = JUMP_VELOCITY
-			animated_sprite_2d.play("jump")
 			jump_count += 1
 		elif jump_count < MAX_JUMPS:
 			velocity.y = JUMP_VELOCITY
-			animated_sprite_2d.play("double_jump")
 			jump_count += 1
 
 	
@@ -139,7 +132,13 @@ func _physics_process(delta: float) -> void:
 		dash_time -= delta
 		if dash_time <= 0:
 			is_dashing = false
-
+	
+	if !is_on_wall() and !is_on_floor():
+		if jump_count >= MAX_JUMPS:
+			animated_sprite_2d.play("double_jump")
+		else:
+			animated_sprite_2d.play("jump")
+	
 	move_and_slide()
 	
 

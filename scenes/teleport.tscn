@@ -1,0 +1,71 @@
+[gd_scene load_steps=10 format=3 uid="uid://5mcj570kvuls"]
+
+[ext_resource type="Script" path="res://scripts/teleport.gd" id="1_4s81c"]
+[ext_resource type="Texture2D" uid="uid://dgfc40bb1tbea" path="res://assets/sprites/backround/portal_sheet.png" id="2_emnyi"]
+[ext_resource type="Script" path="res://scripts/teleport_area.gd" id="3_574s8"]
+[ext_resource type="FontFile" uid="uid://b3gxby06cxsjq" path="res://assets/fonts/PixelOperator8.ttf" id="3_cj3kj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_50fa7"]
+atlas = ExtResource("2_emnyi")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1amx0"]
+atlas = ExtResource("2_emnyi")
+region = Rect2(16, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b20gg"]
+atlas = ExtResource("2_emnyi")
+region = Rect2(32, 0, 16, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qo7u8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_50fa7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1amx0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b20gg")
+}],
+"loop": true,
+"name": &"default",
+"speed": 4.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rhlp3"]
+size = Vector2(16, 32)
+
+[node name="Teleport" type="Node2D"]
+script = ExtResource("1_4s81c")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_qo7u8")
+autoplay = "default"
+frame_progress = 0.242037
+
+[node name="teleport_area" type="Area2D" parent="." groups=["teleport"]]
+collision_layer = 16
+collision_mask = 23
+script = ExtResource("3_574s8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="teleport_area"]
+visibility_layer = 16
+shape = SubResource("RectangleShape2D_rhlp3")
+
+[node name="Label" type="Label" parent="."]
+process_mode = 4
+visible = false
+texture_filter = 5
+offset_left = -69.0
+offset_top = -32.0
+offset_right = 69.0
+offset_bottom = 6.0
+theme_override_fonts/font = ExtResource("3_cj3kj")
+theme_override_font_sizes/font_size = 8
+text = "Press E to enter"
+horizontal_alignment = 1
+
+[connection signal="body_entered" from="teleport_area" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="teleport_area" to="." method="_on_area_2d_body_exited"]
