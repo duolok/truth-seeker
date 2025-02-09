@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://c0taxhxmw7ykt"]
+
+[ext_resource type="PackedScene" uid="uid://dfqm2joyinxn5" path="res://scenes/passkey.tscn" id="1_52wcc"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Passkey" parent="CanvasLayer" instance=ExtResource("1_52wcc")]

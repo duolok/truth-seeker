@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://cvhr3ukqwy0x3"]
+[gd_scene load_steps=24 format=3 uid="uid://cvhr3ukqwy0x3"]
 
 [ext_resource type="Texture2D" uid="uid://batjnojauhui0" path="res://assets/sprites/backround/SKY.png" id="1_kbaqr"]
 [ext_resource type="PackedScene" uid="uid://d3be0rvxbeml2" path="res://scenes/player.tscn" id="1_kn008"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://d0li5nuniam74" path="res://scenes/npc.tscn" id="11_xgtb4"]
 [ext_resource type="FontFile" uid="uid://d2jsuoydg1cv8" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="12_ed3yo"]
 [ext_resource type="PackedScene" uid="uid://c4fenynstt3cb" path="res://scenes/rocket.tscn" id="14_ofokb"]
+[ext_resource type="PackedScene" uid="uid://c0taxhxmw7ykt" path="res://scenes/user_interface.tscn" id="16_xgfgj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wx8d6"]
 texture = ExtResource("3_lobho")
@@ -369,6 +370,9 @@ theme_override_constants/shadow_offset_y = 3
 theme_override_fonts/font = ExtResource("12_ed3yo")
 text = "W A S D -> MOVEMENT"
 
-[node name="rocket" parent="." instance=ExtResource("14_ofokb")]
+[node name="rocket" parent="." node_paths=PackedStringArray("character") instance=ExtResource("14_ofokb")]
 position = Vector2(256, -161)
 scale = Vector2(1.91667, 1.91667)
+character = NodePath("../player")
+
+[node name="Control2" parent="." instance=ExtResource("16_xgfgj")]

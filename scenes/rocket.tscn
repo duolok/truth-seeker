@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://c4fenynstt3cb"]
+[gd_scene load_steps=8 format=3 uid="uid://c4fenynstt3cb"]
 
 [ext_resource type="Texture2D" uid="uid://ba4e1akctfw64" path="res://assets/sprites/player/spaceship.png" id="1_2jixp"]
 [ext_resource type="Script" path="res://scenes/rocket.gd" id="2_avu3x"]
+[ext_resource type="Script" path="res://scenes/rocket_area.gd" id="3_3qwhg"]
 
 [sub_resource type="Curve" id="Curve_rgv2j"]
 _data = [Vector2(0.0235849, 1), 0.0, 0.0, 0, 0, Vector2(0.186321, 0), 0.0, 0.0, 0, 0]
@@ -16,6 +17,9 @@ min_value = -1024.0
 max_value = 1024.0
 _data = [Vector2(0, 200), 0.0, 0.0, 0, 0, Vector2(0.959906, -1024), 0.0, 0.0, 0, 0]
 point_count = 2
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nq5pu"]
+size = Vector2(73, 113)
 
 [node name="rocket" type="Sprite2D"]
 texture = ExtResource("1_2jixp")
@@ -37,3 +41,12 @@ anim_speed_max = 127.15
 anim_speed_curve = SubResource("Curve_18x7w")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 16
+collision_mask = 16
+script = ExtResource("3_3qwhg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-1.5, 5.5)
+shape = SubResource("RectangleShape2D_nq5pu")
