@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://dfh2bm3o3ajma" path="res://assets/sprites/accessories/stars_sheet.png" id="5_nsgnf"]
 [ext_resource type="Texture2D" uid="uid://d1unomg2si83d" path="res://assets/sprites/backround/blue_planet_v2.png" id="5_ykygy"]
 [ext_resource type="PackedScene" uid="uid://d0li5nuniam74" path="res://scenes/npc.tscn" id="6_2umal"]
-[ext_resource type="Texture2D" uid="uid://dsb5qpw1kk1nt" path="res://assets/sprites/player/spaceship.png" id="6_odwdt"]
+[ext_resource type="Texture2D" uid="uid://eymtiwds8fhi" path="res://assets/sprites/player/spaceship.png" id="6_odwdt"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tqkq7"]
 0:0/0 = 0
