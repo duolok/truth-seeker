@@ -1,8 +1,8 @@
-[gd_scene load_steps=29 format=3 uid="uid://bc6dsoh82ddqq"]
+[gd_scene load_steps=34 format=3 uid="uid://bc6dsoh82ddqq"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_j5riv"]
 [ext_resource type="Texture2D" uid="uid://bpbcx8burf5nt" path="res://assets/sprites/player/astronaut_sheet.png" id="2_1yv8i"]
-[ext_resource type="PackedScene" path="res://scenes/cpu_walking_particles_2d.tscn" id="2_5gp1d"]
+[ext_resource type="PackedScene" uid="uid://cqlyqhm6773u8" path="res://scenes/cpu_walking_particles_2d.tscn" id="2_5gp1d"]
 [ext_resource type="Script" path="res://scenes/camera_2d.gd" id="3_wpxak"]
 [ext_resource type="Texture2D" uid="uid://b6o44kn51e2v6" path="res://assets/sprites/light.png" id="4_crni6"]
 
@@ -85,9 +85,29 @@ region = Rect2(64, 128, 32, 32)
 atlas = ExtResource("2_1yv8i")
 region = Rect2(96, 128, 32, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_io11f"]
+atlas = ExtResource("2_1yv8i")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s3ja0"]
+atlas = ExtResource("2_1yv8i")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ona7"]
+atlas = ExtResource("2_1yv8i")
+region = Rect2(64, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qc75b"]
+atlas = ExtResource("2_1yv8i")
+region = Rect2(96, 64, 32, 32)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_scla6"]
 atlas = ExtResource("2_1yv8i")
 region = Rect2(0, 192, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0vvi5"]
+atlas = ExtResource("2_1yv8i")
+region = Rect2(32, 192, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_luy1l"]
 animations = [{
@@ -194,14 +214,39 @@ animations = [{
 }],
 "loop": true,
 "name": &"run",
-"speed": 3.0
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_io11f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s3ja0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7ona7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qc75b")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_scla6")
 }],
 "loop": true,
-"name": &"wall_cling",
+"name": &"wall_cling_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0vvi5")
+}],
+"loop": true,
+"name": &"wall_cling_right",
 "speed": 5.0
 }]
 
@@ -220,9 +265,8 @@ shape = SubResource("RectangleShape2D_m0ce8")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_luy1l")
-animation = &"wall_cling"
+animation = &"wall_cling_right"
 autoplay = "run"
-frame_progress = 0.600822
 
 [node name="Direction" type="Marker2D" parent="."]
 
