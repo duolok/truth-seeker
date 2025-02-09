@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://c4fenynstt3cb"]
+[gd_scene load_steps=6 format=3 uid="uid://b7n2byjbaolw6"]
 
 [ext_resource type="Texture2D" uid="uid://ba4e1akctfw64" path="res://assets/sprites/player/spaceship.png" id="1_2jixp"]
 [ext_resource type="Script" path="res://scenes/rocket.gd" id="2_avu3x"]
@@ -20,9 +20,11 @@ point_count = 2
 [node name="rocket" type="Sprite2D"]
 texture = ExtResource("1_2jixp")
 script = ExtResource("2_avu3x")
+emission = true
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
 position = Vector2(0, 72)
+emitting = false
 amount = 388
 lifetime = 3.0
 speed_scale = 2.0

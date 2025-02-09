@@ -1,9 +1,9 @@
-[gd_scene load_steps=23 format=3 uid="uid://cvhr3ukqwy0x3"]
+[gd_scene load_steps=26 format=3 uid="uid://cvhr3ukqwy0x3"]
 
 [ext_resource type="Texture2D" uid="uid://batjnojauhui0" path="res://assets/sprites/backround/SKY.png" id="1_kbaqr"]
-[ext_resource type="PackedScene" uid="uid://d3be0rvxbeml2" path="res://scenes/player.tscn" id="1_kn008"]
+[ext_resource type="PackedScene" uid="uid://bc6dsoh82ddqq" path="res://scenes/player.tscn" id="1_kn008"]
 [ext_resource type="Script" path="res://scenes/level_0.gd" id="1_tlax5"]
-[ext_resource type="PackedScene" uid="uid://dwofx7xb8ol1h" path="res://assets/canvas_modulate.tscn" id="3_12hda"]
+[ext_resource type="PackedScene" path="res://assets/canvas_modulate.tscn" id="3_12hda"]
 [ext_resource type="Texture2D" uid="uid://dxntdvu2kmy8m" path="res://assets/sprites/backround/desert_1.png" id="3_lobho"]
 [ext_resource type="Texture2D" uid="uid://dobr4go58ubbj" path="res://assets/first_level/barb_wire.png" id="4_lgt3m"]
 [ext_resource type="Texture2D" uid="uid://bgusi5n4647kq" path="res://assets/first_level/box.png" id="5_5uec3"]
@@ -13,7 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://bo5b66g6hvyrj" path="res://assets/first_level/tent.png" id="8_1tckg"]
 [ext_resource type="PackedScene" uid="uid://d0li5nuniam74" path="res://scenes/npc.tscn" id="11_xgtb4"]
 [ext_resource type="FontFile" uid="uid://d2jsuoydg1cv8" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="12_ed3yo"]
-[ext_resource type="PackedScene" uid="uid://c4fenynstt3cb" path="res://scenes/rocket.tscn" id="14_ofokb"]
+[ext_resource type="PackedScene" uid="uid://b7n2byjbaolw6" path="res://scenes/rocket.tscn" id="14_ofokb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wx8d6"]
 texture = ExtResource("3_lobho")
@@ -274,6 +274,91 @@ sources/5 = SubResource("TileSetAtlasSource_p33ey")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8c635"]
 size = Vector2(32, 185.5)
 
+[sub_resource type="Animation" id="Animation_ue8dg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer/cutscene_camera:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(257, -303)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("rocket:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(261, -161)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = false
+tracks/2/path = NodePath("rocket:emission")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_quxmd"]
+resource_name = "launch"
+length = 9.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer/cutscene_camera:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.96667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(257, -303), Vector2(257, -303)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("rocket:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(2, 2.1, 2.26667, 2.4, 2.5, 2.63333, 2.76667, 2.9, 3, 5.5, 8.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(261, -161), Vector2(261, -161), Vector2(261, -161), Vector2(264, -162), Vector2(253, -155), Vector2(261, -161), Vector2(265, -162), Vector2(257, -165), Vector2(259, -160), Vector2(258, -274), Vector2(258, -728)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("rocket:emission")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(3.1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_n21h6"]
+_data = {
+"RESET": SubResource("Animation_ue8dg"),
+"launch": SubResource("Animation_quxmd")
+}
+
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_tlax5")
 
@@ -370,5 +455,15 @@ theme_override_fonts/font = ExtResource("12_ed3yo")
 text = "W A S D -> MOVEMENT"
 
 [node name="rocket" parent="." instance=ExtResource("14_ofokb")]
-position = Vector2(256, -161)
-scale = Vector2(1.91667, 1.91667)
+position = Vector2(261, -161)
+scale = Vector2(1.91667, 1.90996)
+emission = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_n21h6")
+}
+
+[node name="cutscene_camera" type="Camera2D" parent="AnimationPlayer"]
+position = Vector2(257, -303)
+offset = Vector2(0, -25)
