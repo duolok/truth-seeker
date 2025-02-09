@@ -11,7 +11,7 @@ const GRAVITY = 700
 const WALL_SLIDE_GRAVITY = 20
 const WALL_PUSHBACK = 400
 
-const DASH_COOLDOWN = 3.0
+const DASH_COOLDOWN = 0.6
 
 @onready var camera: Camera2D = $Camera2D
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
@@ -33,11 +33,9 @@ func _physics_process(delta: float) -> void:
 
 	if is_on_floor():
 		jump_count = 0
-		animated_sprite_2d.play("idle")
 		if should_shake:
 			camera.start_shake(SHAKE_STRENGHT, 1)
 			should_shake = false
-		
 		
 	if is_on_floor() and Input.is_action_just_pressed("ui_dash") :
 		jump_count = 0
@@ -53,18 +51,30 @@ func _physics_process(delta: float) -> void:
 			animated_sprite_2d.play("double_jump")
 			jump_count += 1
 			should_shake = true
+			
 	wall_slide(delta)
 
 	if not is_on_floor() and not is_dashing:
 		velocity.y += GRAVITY * delta
 
+	if !is_on_wall() and !is_on_floor():
+		animated_sprite_2d.play("jump")
+
+
 	if is_on_wall():
+			
 		if Input.is_action_just_pressed("ui_right"):
 			velocity.y = JUMP_VELOCITY * 1.5
 			velocity.x = -WALL_PUSHBACK
+			animated_sprite_2d.play("jump")
+			
 		elif Input.is_action_just_pressed("ui_left"):
 			velocity.y = JUMP_VELOCITY * 1.5
 			velocity.x = WALL_PUSHBACK
+			animated_sprite_2d.play("jump")
+		else:
+			animated_sprite_2d.play("wall_cling_right")
+			
 
 	if Input.is_action_just_pressed("ui_dialogue"):
 		var actionables = actionable_finder.get_overlapping_areas()
@@ -77,13 +87,21 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
+	var current_speed = SPEED
+
 	if is_on_floor() and is_dashing:
 		jump_count = 0
 		animated_sprite_2d.play("ui_dash")
-	elif is_on_floor() and !is_dashing:
+	elif is_on_floor():
 		jump_count = 0
-		animated_sprite_2d.play("idle")
-
+		if Input.is_action_pressed("ui_sprint"):
+			current_speed *= SPRINT_MULTIPLIER
+			animated_sprite_2d.play("run")
+		elif direction!=0:
+			animated_sprite_2d.play("walk")
+		else:
+			animated_sprite_2d.play("idle")
+	
 	if Input.is_action_just_pressed("ui_up"):
 		if is_on_floor():
 			velocity.y = JUMP_VELOCITY
@@ -94,10 +112,7 @@ func _physics_process(delta: float) -> void:
 			animated_sprite_2d.play("double_jump")
 			jump_count += 1
 
-	var current_speed = SPEED
-	if Input.is_action_pressed("ui_sprint"):
-		current_speed *= SPRINT_MULTIPLIER
-		animated_sprite_2d.play("run")
+	
 
 	var input_direction = Input.get_axis("ui_left", "ui_right")
 	if not is_dashing:
@@ -130,10 +145,5 @@ func _physics_process(delta: float) -> void:
 
 func wall_slide(delta: float) -> void:
 	if is_on_wall() and not is_on_floor():
-		is_wall_sliding = true
-	else:
-		is_wall_sliding = false
-		
-	if is_wall_sliding:
 		velocity.y += WALL_SLIDE_GRAVITY * delta
 		velocity.y = min(velocity.y, WALL_SLIDE_GRAVITY)
