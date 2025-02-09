@@ -66,7 +66,7 @@ func _physics_process(delta: float) -> void:
 			velocity.y = JUMP_VELOCITY * 1.5
 			velocity.x = WALL_PUSHBACK
 
-	if Input.is_action_just_pressed("ui_accept"):
+	if Input.is_action_just_pressed("ui_dialogue"):
 		var actionables = actionable_finder.get_overlapping_areas()
 		if actionables.size() > 0:
 			actionables[0].action()
