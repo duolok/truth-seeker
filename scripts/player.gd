@@ -26,8 +26,8 @@ var dash_direction = Vector2.ZERO
 var dash_cooldown_timer = 0.0
 
 func _physics_process(delta: float) -> void:
-    if dash_cooldown_timer > 0:
-        dash_cooldown_timer -= delta
+	if dash_cooldown_timer > 0:
+		dash_cooldown_timer -= delta
 
 	if is_on_floor():
 		jump_count = 0
@@ -51,86 +51,86 @@ func _physics_process(delta: float) -> void:
 			animated_sprite_2d.play("double_jump")
 			jump_count += 1
 			should_shake = true
-    wall_slide(delta)
+	wall_slide(delta)
 
-    if not is_on_floor() and not is_dashing:
-        velocity.y += GRAVITY * delta
+	if not is_on_floor() and not is_dashing:
+		velocity.y += GRAVITY * delta
 
-    if is_on_wall():
-        if Input.is_action_just_pressed("ui_right"):
-            velocity.y = JUMP_VELOCITY * 1.5
-            velocity.x = -WALL_PUSHBACK
-        elif Input.is_action_just_pressed("ui_left"):
-            velocity.y = JUMP_VELOCITY * 1.5
-            velocity.x = WALL_PUSHBACK
+	if is_on_wall():
+		if Input.is_action_just_pressed("ui_right"):
+			velocity.y = JUMP_VELOCITY * 1.5
+			velocity.x = -WALL_PUSHBACK
+		elif Input.is_action_just_pressed("ui_left"):
+			velocity.y = JUMP_VELOCITY * 1.5
+			velocity.x = WALL_PUSHBACK
 
-    if Input.is_action_just_pressed("ui_accept"):
-        var actionables = actionable_finder.get_overlapping_areas()
-        if actionables.size() > 0:
-            actionables[0].action()
+	if Input.is_action_just_pressed("ui_accept"):
+		var actionables = actionable_finder.get_overlapping_areas()
+		if actionables.size() > 0:
+			actionables[0].action()
 
-    var direction = Input.get_axis("ui_left", "ui_right")
-    if direction != 0:
-        velocity.x = direction * SPEED
-    else:
-        velocity.x = move_toward(velocity.x, 0, SPEED)
+	var direction = Input.get_axis("ui_left", "ui_right")
+	if direction != 0:
+		velocity.x = direction * SPEED
+	else:
+		velocity.x = move_toward(velocity.x, 0, SPEED)
 
-    if is_on_floor() and is_dashing:
-        jump_count = 0
-        animated_sprite_2d.play("ui_dash")
-    elif is_on_floor() and !is_dashing:
-        jump_count = 0
-        animated_sprite_2d.play("idle")
+	if is_on_floor() and is_dashing:
+		jump_count = 0
+		animated_sprite_2d.play("ui_dash")
+	elif is_on_floor() and !is_dashing:
+		jump_count = 0
+		animated_sprite_2d.play("idle")
 
-    if Input.is_action_just_pressed("ui_up"):
-        if is_on_floor():
-            velocity.y = JUMP_VELOCITY
-            animated_sprite_2d.play("jump")
-            jump_count += 1
-        elif jump_count < MAX_JUMPS:
-            velocity.y = JUMP_VELOCITY
-            animated_sprite_2d.play("double_jump")
-            jump_count += 1
+	if Input.is_action_just_pressed("ui_up"):
+		if is_on_floor():
+			velocity.y = JUMP_VELOCITY
+			animated_sprite_2d.play("jump")
+			jump_count += 1
+		elif jump_count < MAX_JUMPS:
+			velocity.y = JUMP_VELOCITY
+			animated_sprite_2d.play("double_jump")
+			jump_count += 1
 
-    var current_speed = SPEED
-    if Input.is_action_pressed("ui_sprint"):
-        current_speed *= SPRINT_MULTIPLIER
-        animated_sprite_2d.play("run")
+	var current_speed = SPEED
+	if Input.is_action_pressed("ui_sprint"):
+		current_speed *= SPRINT_MULTIPLIER
+		animated_sprite_2d.play("run")
 
-    var input_direction = Input.get_axis("ui_left", "ui_right")
-    if not is_dashing:
-        if input_direction != 0:
-            velocity.x = input_direction * current_speed
-            animated_sprite_2d.flip_h = (input_direction < 0)
-        else:
-            velocity.x = move_toward(velocity.x, 0, current_speed)
+	var input_direction = Input.get_axis("ui_left", "ui_right")
+	if not is_dashing:
+		if input_direction != 0:
+			velocity.x = input_direction * current_speed
+			animated_sprite_2d.flip_h = (input_direction < 0)
+		else:
+			velocity.x = move_toward(velocity.x, 0, current_speed)
 
-    if Input.is_action_just_pressed("ui_dash") and not is_dashing and dash_cooldown_timer <= 0:
-        is_dashing = true
-        dash_time = DASH_DURATION
-        dash_cooldown_timer = DASH_COOLDOWN  # Reset cooldown timer.
-        animated_sprite_2d.play("dash")
-        if input_direction != 0:
-            dash_direction = Vector2(input_direction, 0).normalized()
-        else:
-            dash_direction = Vector2(-1 if animated_sprite_2d.flip_h else 1, 0)
-        velocity.y = 0  
+	if Input.is_action_just_pressed("ui_dash") and not is_dashing and dash_cooldown_timer <= 0:
+		is_dashing = true
+		dash_time = DASH_DURATION
+		dash_cooldown_timer = DASH_COOLDOWN  # Reset cooldown timer.
+		animated_sprite_2d.play("dash")
+		if input_direction != 0:
+			dash_direction = Vector2(input_direction, 0).normalized()
+		else:
+			dash_direction = Vector2(-1 if animated_sprite_2d.flip_h else 1, 0)
+		velocity.y = 0  
 
-    if is_dashing:
-        velocity.x = dash_direction.x * DASH_SPEED
-        velocity.y = dash_direction.y * DASH_SPEED
-        dash_time -= delta
-        if dash_time <= 0:
-            is_dashing = false
+	if is_dashing:
+		velocity.x = dash_direction.x * DASH_SPEED
+		velocity.y = dash_direction.y * DASH_SPEED
+		dash_time -= delta
+		if dash_time <= 0:
+			is_dashing = false
 
-    move_and_slide()
+	move_and_slide()
 
 func wall_slide(delta: float) -> void:
-    if is_on_wall() and not is_on_floor():
-        is_wall_sliding = true
-    else:
-        is_wall_sliding = false
-        
-    if is_wall_sliding:
-        velocity.y += WALL_SLIDE_GRAVITY * delta
-        velocity.y = min(velocity.y, WALL_SLIDE_GRAVITY)
+	if is_on_wall() and not is_on_floor():
+		is_wall_sliding = true
+	else:
+		is_wall_sliding = false
+		
+	if is_wall_sliding:
+		velocity.y += WALL_SLIDE_GRAVITY * delta
+		velocity.y = min(velocity.y, WALL_SLIDE_GRAVITY)
