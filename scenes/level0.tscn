@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://cvhr3ukqwy0x3"]
+[gd_scene load_steps=23 format=3 uid="uid://cvhr3ukqwy0x3"]
 
 [ext_resource type="Texture2D" uid="uid://batjnojauhui0" path="res://assets/sprites/backround/SKY.png" id="1_kbaqr"]
 [ext_resource type="PackedScene" uid="uid://d3be0rvxbeml2" path="res://scenes/player.tscn" id="1_kn008"]
@@ -8,10 +8,12 @@
 [ext_resource type="Texture2D" uid="uid://dobr4go58ubbj" path="res://assets/first_level/barb_wire.png" id="4_lgt3m"]
 [ext_resource type="Texture2D" uid="uid://bgusi5n4647kq" path="res://assets/first_level/box.png" id="5_5uec3"]
 [ext_resource type="Texture2D" uid="uid://r7n7bb3qq10l" path="res://assets/first_level/crate.png" id="6_ynwhj"]
+[ext_resource type="Texture2D" uid="uid://vqo0osqvai8k" path="res://assets/first_level/sign.png" id="7_7tjd6"]
 [ext_resource type="Texture2D" uid="uid://4nwod7i4gsmh" path="res://assets/first_level/lights.png" id="7_knm3k"]
 [ext_resource type="Texture2D" uid="uid://bo5b66g6hvyrj" path="res://assets/first_level/tent.png" id="8_1tckg"]
 [ext_resource type="PackedScene" uid="uid://d0li5nuniam74" path="res://scenes/npc.tscn" id="11_xgtb4"]
 [ext_resource type="FontFile" uid="uid://d2jsuoydg1cv8" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="12_ed3yo"]
+[ext_resource type="PackedScene" uid="uid://c4fenynstt3cb" path="res://scenes/rocket.tscn" id="14_ofokb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wx8d6"]
 texture = ExtResource("3_lobho")
@@ -302,15 +304,20 @@ position = Vector2(134, -119)
 scale = Vector2(1.5625, 1.5625)
 texture = ExtResource("8_1tckg")
 
-[node name="Sprite2D5" type="Sprite2D" parent="."]
-position = Vector2(110, -79)
+[node name="crate" type="Sprite2D" parent="."]
+position = Vector2(154, -83)
 scale = Vector2(1.5625, 1.5625)
 texture = ExtResource("6_ynwhj")
 
-[node name="Sprite2D6" type="Sprite2D" parent="."]
-position = Vector2(226, -102)
+[node name="lamp" type="Sprite2D" parent="."]
+position = Vector2(87, -103)
 scale = Vector2(1.125, 1.20833)
 texture = ExtResource("7_knm3k")
+
+[node name="sign" type="Sprite2D" parent="."]
+position = Vector2(202, -103)
+scale = Vector2(0.875, 0.875)
+texture = ExtResource("7_7tjd6")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_txlhv")
@@ -344,7 +351,11 @@ offset_left = -93.0
 offset_top = -1.0
 offset_right = 95.0
 offset_bottom = 22.0
+theme_override_colors/font_shadow_color = Color(0.129558, 0.129558, 0.129558, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
 theme_override_fonts/font = ExtResource("12_ed3yo")
+theme_override_font_sizes/font_size = 0
 text = "E  -> INTERACT"
 
 [node name="wasd_label" type="Label" parent="."]
@@ -352,5 +363,12 @@ offset_left = -94.0
 offset_top = 37.0
 offset_right = 204.0
 offset_bottom = 60.0
+theme_override_colors/font_shadow_color = Color(0.129412, 0.129412, 0.129412, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
 theme_override_fonts/font = ExtResource("12_ed3yo")
 text = "W A S D -> MOVEMENT"
+
+[node name="rocket" parent="." instance=ExtResource("14_ofokb")]
+position = Vector2(264, -137)
+scale = Vector2(1.91667, 1.91667)

@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://c4fenynstt3cb"]
+
+[ext_resource type="Texture2D" uid="uid://ba4e1akctfw64" path="res://assets/sprites/player/spaceship.png" id="1_2jixp"]
+[ext_resource type="Script" path="res://scenes/rocket.gd" id="2_avu3x"]
+
+[sub_resource type="Curve" id="Curve_rgv2j"]
+_data = [Vector2(0.0235849, 1), 0.0, 0.0, 0, 0, Vector2(0.186321, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_u18wx"]
+offsets = PackedFloat32Array(0.00490196, 0.0245098, 0.159314)
+colors = PackedColorArray(1, 1, 1, 1, 0.874762, 0.159244, 0, 1, 0.777528, 0.543313, 1.92523e-07, 1)
+
+[sub_resource type="Curve" id="Curve_18x7w"]
+min_value = -1024.0
+max_value = 1024.0
+_data = [Vector2(0, 200), 0.0, 0.0, 0, 0, Vector2(0.959906, -1024), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[node name="rocket" type="Sprite2D"]
+texture = ExtResource("1_2jixp")
+script = ExtResource("2_avu3x")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+position = Vector2(0, 72)
+amount = 388
+lifetime = 3.0
+speed_scale = 2.0
+fract_delta = false
+emission_shape = 1
+emission_sphere_radius = 30.0
+scale_amount_max = 50.0
+scale_amount_curve = SubResource("Curve_rgv2j")
+color_ramp = SubResource("Gradient_u18wx")
+anim_speed_min = 1.0
+anim_speed_max = 127.15
+anim_speed_curve = SubResource("Curve_18x7w")
