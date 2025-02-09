@@ -17,6 +17,7 @@ const DASH_COOLDOWN = 0.6
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var actionable_finder: Area2D = $Direction/ActionableFinder
 @onready var point_light: PointLight2D = $PointLight2D
+@onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 @export var particle_scene: PackedScene
 
@@ -69,6 +70,7 @@ func _physics_process(delta: float) -> void:
 			if is_on_floor():
 				velocity.y = JUMP_VELOCITY
 				jump_count += 1
+				
 			elif jump_count < MAX_JUMPS:
 				velocity.y = JUMP_VELOCITY
 				jump_count += 1
@@ -83,10 +85,12 @@ func _physics_process(delta: float) -> void:
 			if Input.is_action_just_pressed("ui_right"):
 				velocity.y = JUMP_VELOCITY * 1.5
 				velocity.x = -WALL_PUSHBACK
+				audio_stream_player_2d.play(1.2)
 				
 			elif Input.is_action_just_pressed("ui_left"):
 				velocity.y = JUMP_VELOCITY * 1.5
 				velocity.x = WALL_PUSHBACK
+				audio_stream_player_2d.play(1.2)
 			else:
 				animated_sprite_2d.play("wall_cling_right")
 				
@@ -121,6 +125,8 @@ func _physics_process(delta: float) -> void:
 			elif jump_count < MAX_JUMPS:
 				velocity.y = JUMP_VELOCITY
 				jump_count += 1
+			audio_stream_player_2d.play(1.2)
+			
 
 		
 
@@ -155,6 +161,7 @@ func _physics_process(delta: float) -> void:
 				animated_sprite_2d.play("double_jump")
 			else:
 				animated_sprite_2d.play("jump")
+			
 		
 		move_and_slide()
 	
