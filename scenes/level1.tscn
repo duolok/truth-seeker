@@ -218,10 +218,3 @@ position = Vector2(-186, -71)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color(0.481789, 0.481789, 0.481789, 1)
-
-[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
-amount = 500
-emission_shape = 3
-emission_rect_extents = Vector2(500, -300)
-spread = 43.38
-gravity = Vector2(-500, 980)

@@ -17,6 +17,8 @@ const DASH_COOLDOWN = 3.0
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var actionable_finder: Area2D = $Direction/ActionableFinder
 
+@export var particle_scene: PackedScene
+
 var should_shake = false
 var jump_count = 0
 var is_dashing = false
@@ -124,6 +126,7 @@ func _physics_process(delta: float) -> void:
 			is_dashing = false
 
 	move_and_slide()
+	
 
 func wall_slide(delta: float) -> void:
 	if is_on_wall() and not is_on_floor():
