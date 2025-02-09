@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://cc83woy71warb"]
+[gd_scene load_steps=5 format=3 uid="uid://cc83woy71warb"]
 
 [ext_resource type="FontFile" uid="uid://b3gxby06cxsjq" path="res://assets/fonts/PixelOperator8.ttf" id="1_bx2a6"]
 [ext_resource type="Script" path="res://scripts/menu.gd" id="1_s00jp"]
+[ext_resource type="Texture2D" uid="uid://batjnojauhui0" path="res://assets/sprites/backround/SKY.png" id="2_nnqsu"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_hiesb"]
 
@@ -28,6 +29,11 @@ offset_right = 46.5
 offset_bottom = 50.5
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Sky" type="Sprite2D" parent="Container"]
+position = Vector2(264, 67.5)
+scale = Vector2(1.51927, 1.51927)
+texture = ExtResource("2_nnqsu")
 
 [node name="Label" type="Label" parent="Container"]
 layout_mode = 2
