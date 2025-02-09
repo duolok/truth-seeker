@@ -77,6 +77,8 @@ func _physics_process(delta: float) -> void:
 		if actionables.size() > 0:
 			if actionables[0].is_in_group("teleport"):
 				actionables[0].teleport(self)
+			elif actionables[0].is_in_group("rocket"):
+				actionables[0].popup()
 			else:
 				actionables[0].action()
 

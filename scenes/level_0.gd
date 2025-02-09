@@ -7,16 +7,17 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if Input.is_action_pressed("ui_dialogue"):
-		
-		$AnimationPlayer/cutscene_camera.global_position=$player/Camera2D.global_position
-		
-		$AnimationPlayer/cutscene_camera.zoom=$player/Camera2D.zoom
-
-		$AnimationPlayer/cutscene_camera.make_current()
-		$AnimationPlayer.get_animation("launch").track_set_key_value(0,0,$AnimationPlayer/cutscene_camera.position)
-		
-		$AnimationPlayer.play("launch")
+	#if Input.is_action_pressed("ui_dialogue"):
+		#
+		#$AnimationPlayer/cutscene_camera.global_position=$player/Camera2D.global_position
+		#
+		#$AnimationPlayer/cutscene_camera.zoom=$player/Camera2D.zoom
+#
+		#$AnimationPlayer/cutscene_camera.make_current()
+		#$AnimationPlayer.get_animation("launch").track_set_key_value(0,0,$AnimationPlayer/cutscene_camera.position)
+		#
+		#$AnimationPlayer.play("launch")
+	pass
 		
 		
 		

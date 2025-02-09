@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://bnjv6nonakj83"]
+[gd_scene load_steps=10 format=3 uid="uid://bekoh2k83mo2"]
 
 [ext_resource type="Texture2D" uid="uid://ba4e1akctfw64" path="res://assets/sprites/player/spaceship.png" id="1_2jixp"]
 [ext_resource type="Script" path="res://scenes/rocket.gd" id="2_avu3x"]
 [ext_resource type="Script" path="res://scenes/rocket_area.gd" id="3_3qwhg"]
 [ext_resource type="FontFile" uid="uid://b3gxby06cxsjq" path="res://assets/fonts/PixelOperator8.ttf" id="4_scshu"]
+[ext_resource type="PackedScene" path="res://scenes/passkey.tscn" id="5_gldie"]
 
 [sub_resource type="Curve" id="Curve_rgv2j"]
 _data = [Vector2(0.0235849, 1), 0.0, 0.0, 0, 0, Vector2(0.186321, 0), 0.0, 0.0, 0, 0]
@@ -45,9 +46,9 @@ anim_speed_curve = SubResource("Curve_18x7w")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="." groups=["rocket"]]
 collision_layer = 16
-collision_mask = 17
+collision_mask = 23
 script = ExtResource("3_3qwhg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
@@ -56,6 +57,7 @@ shape = SubResource("RectangleShape2D_nq5pu")
 
 [node name="Label" type="Label" parent="."]
 process_mode = 4
+visible = false
 texture_filter = 5
 offset_left = -60.0
 offset_top = 83.0
@@ -65,3 +67,10 @@ theme_override_fonts/font = ExtResource("4_scshu")
 theme_override_font_sizes/font_size = 8
 text = "Press E to interact"
 horizontal_alignment = 1
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="pass" parent="CanvasLayer" instance=ExtResource("5_gldie")]
+position = Vector2(581, 326)
+scale = Vector2(3, 3)

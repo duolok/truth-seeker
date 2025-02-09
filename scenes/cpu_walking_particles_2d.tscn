@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://cqlyqhm6773u8"]
+[gd_scene format=3 uid="uid://ce0barn1awkmn"]
 
 [node name="CPUParticles2D" type="CPUParticles2D"]
 amount = 20
