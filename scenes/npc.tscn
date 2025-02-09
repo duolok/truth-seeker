@@ -51,8 +51,10 @@ script = ExtResource("1_0px5a")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_luy1l")
 autoplay = "default"
+flip_h = true
 
 [node name="Actionable2" parent="." instance=ExtResource("3_sd6tm")]
+collision_layer = 17
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Actionable2"]
 visibility_layer = 0

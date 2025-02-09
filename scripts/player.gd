@@ -16,6 +16,7 @@ const DASH_COOLDOWN = 3.0
 @onready var camera: Camera2D = $Camera2D
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var actionable_finder: Area2D = $Direction/ActionableFinder
+@onready var point_light: PointLight2D = $PointLight2D
 
 @export var particle_scene: PackedScene
 
@@ -37,7 +38,6 @@ func _physics_process(delta: float) -> void:
 		if should_shake:
 			camera.start_shake(SHAKE_STRENGHT, 1)
 			should_shake = false
-		
 		
 	if is_on_floor() and Input.is_action_just_pressed("ui_dash") :
 		jump_count = 0
