@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=4 uid="uid://dxb70pjub1tuj"]
+[gd_scene load_steps=42 format=4 uid="uid://dxb70pjub1tuj"]
 
 [ext_resource type="Script" path="res://scenes/first_level.gd" id="1_gj01s"]
 [ext_resource type="Texture2D" uid="uid://lk6mps0sbsxe" path="res://assets/sprites/backround/platforms.png" id="2_3tthn"]
@@ -7376,30 +7376,70 @@ texture = ExtResource("2_u7fha")
 2:15/0 = 0
 3:15/0 = 0
 
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_2b3y1"]
+polygon = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_gvptf"]
+polygon = PackedVector2Array(-8, -8, -8, 8, 8, 8, 8, -8)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_s5nl0"]
+polygon = PackedVector2Array(-7.46875, 8, 8, 8, 8, 0.8125)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_ku3bl"]
+polygon = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_qw3mg"]
+polygon = PackedVector2Array(-8, 0.75, 8, 8, 8, 8, -8, 8)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_267f0"]
+polygon = PackedVector2Array(-8, 0.5, -8, 8, 8, 8, 8, -6.9375)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_dt4wn"]
+polygon = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_62vfl"]
+polygon = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_bwqj6"]
+polygon = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_j7er2"]
+polygon = PackedVector2Array(-8, -8, -7.46875, -7.5, 8, 0.6875, 8, 8, -8, 8)
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_khfvv"]
 texture = ExtResource("5_ykygy")
 0:0/0 = 0
+0:0/0/occlusion_layer_1/polygon = SubResource("OccluderPolygon2D_2b3y1")
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:0/0 = 0
+1:0/0/occlusion_layer_1/polygon = SubResource("OccluderPolygon2D_ku3bl")
 1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 2:0/0 = 0
+2:0/0/occlusion_layer_1/polygon = SubResource("OccluderPolygon2D_dt4wn")
 2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 3:0/0 = 0
+3:0/0/occlusion_layer_1/polygon = SubResource("OccluderPolygon2D_62vfl")
 3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 4:0/0 = 0
+4:0/0/occlusion_layer_1/polygon = SubResource("OccluderPolygon2D_bwqj6")
 4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, 0.22097, 8, 8, -8, 8)
 5:0/0 = 0
+5:0/0/occlusion_layer_1/polygon = SubResource("OccluderPolygon2D_j7er2")
 5:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, 8, -8, 0.22097, -8, 8, 8, 8)
 0:1/0 = 0
+0:1/0/occlusion_layer_1/polygon = SubResource("OccluderPolygon2D_gvptf")
 0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:1/0 = 0
+1:1/0/occlusion_layer_1/polygon = SubResource("OccluderPolygon2D_qw3mg")
 2:1/0 = 0
 3:1/0 = 0
 4:1/0 = 0
 5:1/0 = 0
 0:2/0 = 0
+0:2/0/occlusion_layer_1/polygon = SubResource("OccluderPolygon2D_s5nl0")
 0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 8, 8, 0.22097, 8, 8, -8, 8)
 1:2/0 = 0
+1:2/0/occlusion_layer_1/polygon = SubResource("OccluderPolygon2D_267f0")
 1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, -8, -8, 0.22097, -8, 8, 8, 8)
 2:2/0 = 0
 3:2/0 = 0
@@ -7663,8 +7703,7 @@ tile_map_data = PackedByteArray("AAD8/wEABAAFAAAAAAD7/wEABAAEAAAAAAD6/wEABAACAAA
 tile_set = SubResource("TileSet_8rq1y")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-visible = false
-color = Color(0.347817, 0.347817, 0.347817, 1)
+color = Color(0.535023, 0.535023, 0.535023, 1)
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 visible = false
@@ -7803,6 +7842,7 @@ horizontal_alignment = 1
 
 [node name="player" parent="." groups=["player"] instance=ExtResource("3_jyt47")]
 position = Vector2(-199, -51)
+use_light = true
 particle_scene = null
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

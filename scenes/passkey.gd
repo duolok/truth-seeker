@@ -34,6 +34,11 @@ func button_press(num: String) -> void:
 		"5":
 			right_num=(right_num+9)%10
 			right.text = str(right_num)
-	if passkey == left_num*100+middle_num*10+right_num:
-		canvas_layer.visible = false
-		rocket._emit_signal()
+	
+		
+		
+func _process(delta: float) -> void:
+	if Input.is_action_just_pressed("ui_enter"):
+		if passkey == left_num*100+middle_num*10+right_num:
+			canvas_layer.visible = false
+			rocket._emit_signal()	
