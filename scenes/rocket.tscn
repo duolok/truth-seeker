@@ -24,9 +24,11 @@ size = Vector2(73, 113)
 [node name="rocket" type="Sprite2D"]
 texture = ExtResource("1_2jixp")
 script = ExtResource("2_avu3x")
+emission = true
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
 position = Vector2(0, 72)
+emitting = false
 amount = 388
 lifetime = 3.0
 speed_scale = 2.0
