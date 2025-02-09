@@ -236,6 +236,8 @@ shape = SubResource("RectangleShape2D_ncmix")
 [node name="Camera2D" type="Camera2D" parent="."]
 offset = Vector2(0, -25)
 zoom = Vector2(3.145, 3.145)
+position_smoothing_enabled = true
+position_smoothing_speed = 3.0
 script = ExtResource("3_wpxak")
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
