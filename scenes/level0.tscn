@@ -359,7 +359,7 @@ _data = {
 "launch": SubResource("Animation_quxmd")
 }
 
-[node name="Node2D" type="Node2D"]
+[node name="lvl0" type="Node2D"]
 script = ExtResource("1_tlax5")
 
 [node name="TextureRect" type="TextureRect" parent="."]
@@ -461,3 +461,5 @@ libraries = {
 [node name="cutscene_camera" type="Camera2D" parent="AnimationPlayer"]
 position = Vector2(501, -303)
 offset = Vector2(0, -25)
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
