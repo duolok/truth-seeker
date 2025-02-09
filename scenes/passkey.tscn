@@ -1,0 +1,74 @@
+[gd_scene load_steps=5 format=3 uid="uid://dvhhc0o0kug1i"]
+
+[ext_resource type="Texture2D" uid="uid://bs6konn4pf70h" path="res://assets/sprites/backround/button.png" id="1_pf8el"]
+[ext_resource type="Texture2D" uid="uid://du8ic2dk33esu" path="res://assets/sprites/backround/password_panel.png" id="1_t6quo"]
+[ext_resource type="Texture2D" uid="uid://lva7lulufpik" path="res://assets/sprites/backround/button hover.png" id="2_gnpr7"]
+[ext_resource type="Texture2D" uid="uid://dcygkwrfo7a1x" path="res://assets/sprites/backround/button press.png" id="3_q40sx"]
+
+[node name="pass" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_t6quo")
+
+[node name="but1up" type="TextureButton" parent="."]
+offset_left = -83.0
+offset_top = -69.0
+offset_right = -19.0
+offset_bottom = -37.0
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("2_gnpr7")
+texture_pressed = ExtResource("3_q40sx")
+texture_hover = ExtResource("1_pf8el")
+
+[node name="but2up" type="TextureButton" parent="."]
+offset_left = 52.0
+offset_top = -69.0
+offset_right = 116.0
+offset_bottom = -37.0
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("2_gnpr7")
+texture_pressed = ExtResource("3_q40sx")
+texture_hover = ExtResource("1_pf8el")
+
+[node name="but3up" type="TextureButton" parent="."]
+offset_left = -15.0
+offset_top = -69.0
+offset_right = 49.0
+offset_bottom = -37.0
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("2_gnpr7")
+texture_pressed = ExtResource("3_q40sx")
+texture_hover = ExtResource("1_pf8el")
+
+[node name="but1up2" type="TextureButton" parent="."]
+offset_left = -83.0
+offset_top = 53.0
+offset_right = -19.0
+offset_bottom = 85.0
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("2_gnpr7")
+texture_pressed = ExtResource("3_q40sx")
+texture_hover = ExtResource("1_pf8el")
+flip_v = true
+
+[node name="but2up2" type="TextureButton" parent="."]
+offset_left = 52.0
+offset_top = 53.0
+offset_right = 116.0
+offset_bottom = 85.0
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("2_gnpr7")
+texture_pressed = ExtResource("3_q40sx")
+texture_hover = ExtResource("1_pf8el")
+flip_v = true
+
+[node name="but3up2" type="TextureButton" parent="."]
+offset_left = -15.0
+offset_top = 53.0
+offset_right = 49.0
+offset_bottom = 85.0
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("2_gnpr7")
+texture_pressed = ExtResource("3_q40sx")
+texture_hover = ExtResource("1_pf8el")
+flip_v = true

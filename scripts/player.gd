@@ -16,6 +16,7 @@ const DASH_COOLDOWN = 0.6
 @onready var camera: Camera2D = $Camera2D
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var actionable_finder: Area2D = $Direction/ActionableFinder
+@onready var point_light: PointLight2D = $PointLight2D
 
 @export var particle_scene: PackedScene
 
@@ -27,7 +28,12 @@ var dash_time = 0.0
 var dash_direction = Vector2.ZERO
 var dash_cooldown_timer = 0.0
 
+func _ready() -> void:
+	add_to_group("player")
+
+
 func _physics_process(delta: float) -> void:
+	
 	if dash_cooldown_timer > 0:
 		dash_cooldown_timer -= delta
 
@@ -66,7 +72,6 @@ func _physics_process(delta: float) -> void:
 		else:
 			animated_sprite_2d.play("wall_cling_right")
 			
-
 	if Input.is_action_just_pressed("ui_dialogue"):
 		var actionables = actionable_finder.get_overlapping_areas()
 		if actionables.size() > 0:

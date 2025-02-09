@@ -28,6 +28,12 @@ Mr. Green: The first digit of the secret code is number 8.
 
 => END
 
+~ level0_npc1
+
+Alfred: The key is 123.
+
+=> END
+
 ~ MrRedSon
 
 Mr. Red Junior: [[Hi|Hello|Howdy]], I the son of infamous Mr.Red.
