@@ -7470,37 +7470,57 @@ position = Vector2(-2, 234)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
 shape = SubResource("WorldBoundaryShape2D_bqx0v")
 
+[node name="HiddenCharater" parent="." instance=ExtResource("6_2umal")]
+position = Vector2(-443, -355)
+dialogue_id = "MrLecic"
+metadata/hat_color = 1
+
+[node name="Liar1" parent="." instance=ExtResource("6_2umal")]
+position = Vector2(125, 95)
+dialogue_id = "MrGreen"
+metadata/hat_color = 2
+
+[node name="Liar1s" parent="." instance=ExtResource("6_2umal")]
+position = Vector2(449, 48)
+dialogue_id = "MrYellow"
+metadata/hat_color = 3
+
+[node name="Truth1" parent="." instance=ExtResource("6_2umal")]
+position = Vector2(294, -192)
+dialogue_id = "MrRed"
+metadata/hat_color = 1
+
+[node name="Truth2" parent="." instance=ExtResource("6_2umal")]
+position = Vector2(922, -113)
+rotation = -6.28319
+dialogue_id = "MrGreenSon"
+metadata/hat_color = 2
+
+[node name="Liar2" parent="." instance=ExtResource("6_2umal")]
+position = Vector2(1241, -113)
+dialogue_id = "MrYellowSon"
+metadata/hat_color = 3
+
+[node name="Liar2s" parent="." instance=ExtResource("6_2umal")]
+position = Vector2(1298, -17)
+dialogue_id = "MrRedSon"
+metadata/hat_color = 1
+
+[node name="Liar3" parent="." instance=ExtResource("6_2umal")]
+position = Vector2(1631, -17)
+dialogue_id = "MrGreenSenior"
+metadata/hat_color = 2
+
+[node name="Truth3" parent="." instance=ExtResource("6_2umal")]
+position = Vector2(1642, -336)
+dialogue_id = "MrYellowSenior"
+metadata/hat_color = 3
+
+[node name="Liar3s" parent="." instance=ExtResource("6_2umal")]
+position = Vector2(1920, -291)
+dialogue_id = "MrRedSenior"
+metadata/hat_color = 1
+
 [node name="player" parent="." instance=ExtResource("3_jyt47")]
 position = Vector2(-188, -40)
 particle_scene = null
-
-[node name="CharacterBody2D2" parent="." instance=ExtResource("6_2umal")]
-position = Vector2(-443, -355)
-
-[node name="CharacterBody2D3" parent="." instance=ExtResource("6_2umal")]
-position = Vector2(125, 95)
-
-[node name="CharacterBody2D4" parent="." instance=ExtResource("6_2umal")]
-position = Vector2(449, 48)
-
-[node name="CharacterBody2D5" parent="." instance=ExtResource("6_2umal")]
-position = Vector2(294, -192)
-
-[node name="CharacterBody2D6" parent="." instance=ExtResource("6_2umal")]
-position = Vector2(922, -113)
-rotation = -6.28319
-
-[node name="CharacterBody2D7" parent="." instance=ExtResource("6_2umal")]
-position = Vector2(1241, -113)
-
-[node name="CharacterBody2D8" parent="." instance=ExtResource("6_2umal")]
-position = Vector2(1298, -17)
-
-[node name="CharacterBody2D9" parent="." instance=ExtResource("6_2umal")]
-position = Vector2(1631, -17)
-
-[node name="CharacterBody2D10" parent="." instance=ExtResource("6_2umal")]
-position = Vector2(1642, -336)
-
-[node name="CharacterBody2D11" parent="." instance=ExtResource("6_2umal")]
-position = Vector2(1920, -291)

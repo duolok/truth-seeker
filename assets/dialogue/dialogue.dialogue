@@ -1,29 +1,99 @@
-~ start
+~ MrRed
 
-Nathan: [[Hi|Hello|Howdy]], this is some dialogue.
+Mr. Red: [[Hi|Hello|Howdy]], are you perchance looking for some secret code.
+Mr. Red: Hon Hon.
+Mr. Red: Perhapse I know the first digit.
+Mr. Red: If someone were to ask me I would say the first digit is number 4.
 
-=> END
-
-~ ognjen
-
-Nathan: [[Hi|Hello|Howdy]], I'm Ognjen.
 
 => END
 
-~ celar
+~ MrYellow
 
-Nathan: [[Hi|Hello|Howdy]], I'm Celar.
-
-=> END
-
-~ djurica
-
-Nathan: [[Hi|Hello|Howdy]], I'm Djurica.
+Mr. Yellow: [[Hi|Hello|Howdy]], sure is tough beeing surounded by these unknowledgable people.
+Mr. Yellow: Saying all kinds of outrageous things.
+Mr. Yellow: Hon hon.
+Mr. Yellow: Like the first digit of the secret code beeing 7.
 
 => END
 
-~ dusan
+~ MrGreen
 
-Nathan: [[Hi|Hello|Howdy]], I'm Dusan.
+Mr. Green: Greeting me first as soon as you landed what a polite young man?
+Mr. Green: Nevermind that I heard of the predicament you are in.
+Mr. Green: That is quite a pickle.
+Mr. Green: If you trust me my good chap you should heed my advice.
+Mr. Green: The first digit of the secret code is number 8.
+
+
+=> END
+
+~ MrRedSon
+
+Mr. Red Junior: [[Hi|Hello|Howdy]], I the son of infamous Mr.Red.
+Mr. Red Junior: Hon Hon.
+Mr. Red Junior: Perchance you would be interested to hear of the second digit of the secret code.
+Mr. Red Junior: The second digit of the secret code is number 6.
+
+
+=> END
+
+~ MrGreenSon
+
+Mr. Green Junior: [[Hi|Hello|Howdy]], I am Mr. Green.
+Mr. Green Junior: Hon Hon, I see you met my old man.
+Mr. Green Junior: Well in that case you can just call me Mr. Green Junior.
+Mr. Green Junior: Since you already met my old man you know the drill I will give you now a piece of the secret code.
+Mr. Green Junior: The second digit of the secret code is number 8.
+
+
+=> END
+
+~ MrYellowSon
+
+Mr. Yellow Junior: [[Hi|Hello|Howdy]], hmmm that greeting still doesn't sound right.
+Mr. Yellow Junior: I prefer a more fancy greeting when entertaining my entourage such as yourself.
+Mr. Yellow Junior: Well since you look like you admire mua and seem like a good chap I will give you a little help.
+Mr. Yellow Junior: That help of course beeing the second digit of the secret code beeing 7.
+
+=> END
+
+~ MrRedSenior
+
+Mr. Red Senior: [[Hi|Hello|Howdy]], can you perchance help an old chap such as myself.
+Mr. Red Senior: Hon Hon.
+Mr. Red Senior: I see you are in a rush to aquire the secret code to the rocket.
+Mr. Red Senior: Well I won't delay you any longer thet hird digit is number 6.
+
+
+=> END
+
+~ MrYellowSenior
+
+Mr. Yellow Senior: Hmmmm an astronaut, can't say that is an ordinary sight in these parts.
+Mr. Yellow Senior: Say you are looking for the third digit of the code?
+Mr. Yellow Senior: Hon hon.
+Mr. Yellow Senior: You are in luck since the third digit of the secret code is in my knowledge and it is number 9.
+
+=> END
+
+~ MrGreenSenior
+
+Mr. Green Senior: ....
+Mr. Green: .....
+Mr. Green: Hmmmm?
+Mr. Green: Oh didn't see you there my eyesight is terrible.
+Mr. Green: I won't waste you anymore time with my tomfoolery the third number is 8.
+
+
+=> END
+
+~ MrLecic
+
+Mr. Lecic: ......
+Mr. Lecic: ......
+Mr. Lecic: ......
+Mr. Lecic: 489
+Mr. Lecic: ......
 
 => END
