@@ -26,13 +26,13 @@ func button_press(num: String) -> void:
 			right_num=(right_num+1)%10
 			right.text = str(right_num)
 		"4":
-			left_num=(left_num-1)%10
+			left_num=(left_num+9)%10
 			left.text = str(left_num)
 		"6":
-			middle_num=(middle_num-1)%10
+			middle_num=(middle_num+9)%10
 			middle.text = str(middle_num)
 		"5":
-			right_num=(right_num-1)%10
+			right_num=(right_num+9)%10
 			right.text = str(right_num)
 	if passkey == left_num*100+middle_num*10+right_num:
 		canvas_layer.visible = false
