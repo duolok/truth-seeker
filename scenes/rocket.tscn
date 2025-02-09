@@ -35,3 +35,5 @@ color_ramp = SubResource("Gradient_u18wx")
 anim_speed_min = 1.0
 anim_speed_max = 127.15
 anim_speed_curve = SubResource("Curve_18x7w")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]

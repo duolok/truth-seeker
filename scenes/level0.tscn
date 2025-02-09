@@ -370,5 +370,5 @@ theme_override_fonts/font = ExtResource("12_ed3yo")
 text = "W A S D -> MOVEMENT"
 
 [node name="rocket" parent="." instance=ExtResource("14_ofokb")]
-position = Vector2(264, -137)
+position = Vector2(256, -161)
 scale = Vector2(1.91667, 1.91667)
