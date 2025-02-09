@@ -13,7 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://bo5b66g6hvyrj" path="res://assets/first_level/tent.png" id="8_1tckg"]
 [ext_resource type="PackedScene" uid="uid://d0li5nuniam74" path="res://scenes/npc.tscn" id="11_xgtb4"]
 [ext_resource type="FontFile" uid="uid://d2jsuoydg1cv8" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="12_ed3yo"]
-[ext_resource type="PackedScene" path="res://scenes/rocket.tscn" id="14_ofokb"]
+[ext_resource type="PackedScene" uid="uid://bnjv6nonakj83" path="res://scenes/rocket.tscn" id="14_ofokb"]
 [ext_resource type="PackedScene" path="res://scenes/passkey.tscn" id="15_gmm3y"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wx8d6"]
