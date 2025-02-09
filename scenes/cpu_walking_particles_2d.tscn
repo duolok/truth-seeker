@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://cqlyqhm6773u8"]
+
+[node name="CPUParticles2D" type="CPUParticles2D"]
+amount = 20
+lifetime = 5.55
+preprocess = 100.0
+speed_scale = 10.0
+explosiveness = 1.0
+randomness = 1.0
+lifetime_randomness = 1.0
+emission_shape = 1
+emission_sphere_radius = 1.0
+direction = Vector2(0, 0)
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 1.1
+initial_velocity_max = 2.6
