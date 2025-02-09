@@ -14,7 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://d0li5nuniam74" path="res://scenes/npc.tscn" id="11_xgtb4"]
 [ext_resource type="FontFile" uid="uid://d2jsuoydg1cv8" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="12_ed3yo"]
 [ext_resource type="PackedScene" uid="uid://b7n2byjbaolw6" path="res://scenes/rocket.tscn" id="14_ofokb"]
-[ext_resource type="PackedScene" path="res://scenes/user_interface.tscn" id="16_xgfgj"]
+[ext_resource type="PackedScene" uid="uid://dvhhc0o0kug1i" path="res://scenes/passkey.tscn" id="15_gmm3y"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wx8d6"]
 texture = ExtResource("3_lobho")
@@ -454,8 +454,6 @@ position = Vector2(501, -161)
 scale = Vector2(1.91667, 1.91667)
 character = NodePath("../player")
 
-[node name="Control2" parent="." instance=ExtResource("16_xgfgj")]
-
 [node name="rocket2" parent="." instance=ExtResource("14_ofokb")]
 position = Vector2(501, -161)
 scale = Vector2(1.91667, 1.90996)
@@ -469,5 +467,11 @@ libraries = {
 [node name="cutscene_camera" type="Camera2D" parent="AnimationPlayer"]
 position = Vector2(501, -303)
 offset = Vector2(0, -25)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="pass" parent="CanvasLayer" instance=ExtResource("15_gmm3y")]
+position = Vector2(581, 326)
+scale = Vector2(3, 3)
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
