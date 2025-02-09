@@ -283,10 +283,10 @@ tracks/0/path = NodePath("AnimationPlayer/cutscene_camera:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
 "update": 0,
-"values": [Vector2(-285, -233)]
+"values": []
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -295,10 +295,10 @@ tracks/1/path = NodePath("rocket:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.001),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(-287, -107)]
+"values": [Vector2(476, -173), Vector2(477, -171)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -363,10 +363,17 @@ _data = {
 script = ExtResource("1_tlax5")
 
 [node name="TextureRect" type="TextureRect" parent="."]
-offset_left = -959.0
-offset_top = -851.0
-offset_right = 961.0
-offset_bottom = 109.0
+offset_left = -1882.0
+offset_top = -777.0
+offset_right = 38.0
+offset_bottom = 183.0
+texture = ExtResource("1_kbaqr")
+
+[node name="TextureRect" type="TextureRect" parent="TextureRect"]
+layout_mode = 0
+offset_left = 1920.0
+offset_right = 3840.0
+offset_bottom = 960.0
 texture = ExtResource("1_kbaqr")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -449,7 +456,7 @@ theme_override_fonts/font = ExtResource("12_ed3yo")
 text = "W A S D -> MOVEMENT"
 
 [node name="rocket" parent="." node_paths=PackedStringArray("character") instance=ExtResource("14_ofokb")]
-position = Vector2(-287, -107)
+position = Vector2(476, -173)
 scale = Vector2(1.91667, 1.91667)
 character = NodePath("../player")
 metadata/password = 553
@@ -460,7 +467,6 @@ libraries = {
 }
 
 [node name="cutscene_camera" type="Camera2D" parent="AnimationPlayer"]
-position = Vector2(-285, -233)
 offset = Vector2(0, -25)
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
