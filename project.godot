@@ -25,6 +25,11 @@ BgMusic="*res://scenes/bg_music.tscn"
 editor/advanced/custom_test_scene_path="res://scenes/truth_seeker_dialogue.tscn"
 runtime/balloon_path="res://scenes/truth_seeker_dialogue.tscn"
 
+[display]
+
+window/size/mode=3
+window/vsync/vsync_mode=0
+
 [dotnet]
 
 project/assembly_name="TruthSeeker"
