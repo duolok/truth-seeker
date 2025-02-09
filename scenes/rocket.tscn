@@ -76,5 +76,30 @@ position = Vector2(581, 326)
 scale = Vector2(3, 3)
 metadata/password = 553
 
+[node name="Label" type="Label" parent="CanvasLayer"]
+process_mode = 4
+texture_filter = 5
+offset_left = 245.0
+offset_top = 49.0
+offset_right = 917.0
+offset_bottom = 110.0
+theme_override_fonts/font = ExtResource("4_scshu")
+theme_override_font_sizes/font_size = 48
+text = "Press E to exit"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="CanvasLayer"]
+process_mode = 4
+texture_filter = 5
+offset_left = 245.0
+offset_top = 542.0
+offset_right = 916.0
+offset_bottom = 641.0
+theme_override_fonts/font = ExtResource("4_scshu")
+theme_override_font_sizes/font_size = 48
+text = "Enter correct
+code to liftoff"
+horizontal_alignment = 1
+
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
