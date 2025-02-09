@@ -8,3 +8,5 @@ Truth Seeker is a 2D game about betrayal. WIP
 ![image](https://github.com/user-attachments/assets/3f62bb57-c8c5-43c1-88fd-64b48407e042)
 
 ![image](https://github.com/user-attachments/assets/1cfaefc2-01de-4cbf-9a23-442a5a46608c)
+
+![image](https://github.com/user-attachments/assets/0b32c458-0b4e-4b20-83fb-7b9244527441)
