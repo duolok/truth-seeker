@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://bc6dsoh82ddqq"]
+[gd_scene load_steps=33 format=3 uid="uid://d3be0rvxbeml2"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_j5riv"]
 [ext_resource type="Texture2D" uid="uid://bpbcx8burf5nt" path="res://assets/sprites/player/astronaut_sheet.png" id="2_1yv8i"]
@@ -252,7 +252,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ncmix"]
 size = Vector2(16.8367, 22.9592)
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
+[node name="CharacterBody2D" type="CharacterBody2D" groups=["player"]]
 position = Vector2(0, -100)
 collision_layer = 6
 script = ExtResource("1_j5riv")

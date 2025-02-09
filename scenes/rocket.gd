@@ -1,5 +1,6 @@
 extends Sprite2D
 
+@export var character: CharacterBody2D
 @export var emission: bool = false
 @onready var particles: CPUParticles2D = $CPUParticles2D
 
