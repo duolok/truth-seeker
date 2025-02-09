@@ -75,3 +75,6 @@ visible = false
 position = Vector2(581, 326)
 scale = Vector2(3, 3)
 metadata/password = 553
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]

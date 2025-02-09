@@ -463,5 +463,12 @@ libraries = {
 position = Vector2(501, -303)
 offset = Vector2(0, -25)
 
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2(826, -1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(-239, -133)
+shape = SubResource("RectangleShape2D_8c635")
+
 [connection signal="start_liftof" from="rocket" to="." method="_on_rocket_start_liftof"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
