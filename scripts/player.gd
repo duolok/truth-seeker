@@ -30,6 +30,7 @@ var dash_time = 0.0
 var dash_direction = Vector2.ZERO
 var dash_cooldown_timer = 0.0
 var popup = false
+var in_game_menu_opened = false
 
 func _ready() -> void:
 	add_to_group("player")
@@ -172,3 +173,9 @@ func wall_slide(delta: float) -> void:
 	if is_on_wall() and not is_on_floor():
 		velocity.y += WALL_SLIDE_GRAVITY * delta
 		velocity.y = min(velocity.y, WALL_SLIDE_GRAVITY)
+
+
+func _process(delta: float) -> void:
+	if Input.is_action_just_pressed("ui_menu"):
+		$CanvasLayer.visible = not $CanvasLayer.visible
+		

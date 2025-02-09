@@ -1,0 +1,56 @@
+[gd_scene load_steps=3 format=3 uid="uid://i3xq4h7am1vn"]
+
+[ext_resource type="Script" path="res://in_game_menu.gd" id="1_t64xj"]
+[ext_resource type="FontFile" uid="uid://b3gxby06cxsjq" path="res://assets/fonts/PixelOperator8.ttf" id="2_un5g6"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource("1_t64xj")
+
+[node name="Container" type="VBoxContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -46.5
+offset_top = -50.5
+offset_right = 46.5
+offset_bottom = 50.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="Container"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_un5g6")
+theme_override_font_sizes/font_size = 110
+text = "Truth Seeker"
+
+[node name="Resume" type="Button" parent="Container"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_un5g6")
+theme_override_font_sizes/font_size = 64
+text = "Resume"
+
+[node name="NewGameButton" type="Button" parent="Container"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_un5g6")
+theme_override_font_sizes/font_size = 64
+text = "New Game"
+
+[node name="OptionsButton" type="Button" parent="Container"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_un5g6")
+theme_override_font_sizes/font_size = 64
+text = "Options"
+
+[node name="QuitButton" type="Button" parent="Container"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_un5g6")
+theme_override_font_sizes/font_size = 64
+text = "Quit"
+
+[connection signal="pressed" from="Container/Resume" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="Container/NewGameButton" to="." method="_on_new_game_button_pressed"]
+[connection signal="pressed" from="Container/QuitButton" to="." method="_on_quit_button_pressed"]

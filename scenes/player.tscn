@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://bc6dsoh82ddqq"]
+[gd_scene load_steps=36 format=3 uid="uid://bc6dsoh82ddqq"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_j5riv"]
 [ext_resource type="Texture2D" uid="uid://bpbcx8burf5nt" path="res://assets/sprites/player/astronaut_sheet.png" id="2_1yv8i"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://scenes/camera_2d.gd" id="3_wpxak"]
 [ext_resource type="Texture2D" uid="uid://b6o44kn51e2v6" path="res://assets/sprites/light.png" id="4_crni6"]
 [ext_resource type="AudioStream" uid="uid://nr467w8rhvca" path="res://assets/sound/Jump Sound Effect.mp3" id="6_05qee"]
+[ext_resource type="PackedScene" uid="uid://i3xq4h7am1vn" path="res://in_game_menu.tscn" id="7_won30"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m0ce8"]
 size = Vector2(14.265, 28.04)
@@ -308,3 +309,6 @@ gravity = Vector2(-500, 980)
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_05qee")
+
+[node name="CanvasLayer" parent="." instance=ExtResource("7_won30")]
+visible = false

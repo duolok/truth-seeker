@@ -33,31 +33,35 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme_override_constants/separation = 50
 
 [node name="Sky" type="Sprite2D" parent="Container"]
-position = Vector2(264, 67.5)
+position = Vector2(499, 300.5)
 scale = Vector2(1.589, 2.049)
 texture = ExtResource("2_nnqsu")
 
 [node name="Label" type="Label" parent="Container"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_bx2a6")
-theme_override_font_sizes/font_size = 50
+theme_override_font_sizes/font_size = 110
 text = "Truth Seeker"
 
 [node name="NewGameButton" type="Button" parent="Container"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_bx2a6")
+theme_override_font_sizes/font_size = 63
 text = "New Game"
 
 [node name="OptionsButton" type="Button" parent="Container"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_bx2a6")
+theme_override_font_sizes/font_size = 64
 text = "Options"
 
 [node name="QuitButton" type="Button" parent="Container"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_bx2a6")
+theme_override_font_sizes/font_size = 64
 text = "Quit"
 
 [connection signal="pressed" from="Container/NewGameButton" to="." method="_on_new_game_button_pressed"]
