@@ -1,16 +1,14 @@
-[gd_scene load_steps=16 format=3 uid="uid://dxb70pjub1tuj"]
+[gd_scene load_steps=15 format=3 uid="uid://bu6jss4ysaran"]
 
-[ext_resource type="Texture2D" path="res://assets/sprites/backround/blue_planet.png" id="1_wyini"]
 [ext_resource type="Texture2D" uid="uid://lk6mps0sbsxe" path="res://assets/sprites/backround/platforms.png" id="2_3tthn"]
 [ext_resource type="Texture2D" uid="uid://ui2bg4g6isus" path="res://assets/sprites/world_tileset.png" id="2_u7fha"]
 [ext_resource type="PackedScene" uid="uid://bc6dsoh82ddqq" path="res://scenes/player.tscn" id="3_jyt47"]
 [ext_resource type="Texture2D" uid="uid://batjnojauhui0" path="res://assets/sprites/backround/SKY.png" id="3_sjj8l"]
-[ext_resource type="PackedScene" uid="uid://bcqvpfo6kg4ia" path="res://scenes/killzone.tscn" id="4_g5jha"]
+[ext_resource type="PackedScene" path="res://scenes/killzone.tscn" id="4_g5jha"]
 [ext_resource type="Texture2D" uid="uid://d1unomg2si83d" path="res://assets/sprites/backround/blue_planet_v2.png" id="5_ykygy"]
 [ext_resource type="PackedScene" uid="uid://d0li5nuniam74" path="res://scenes/npc.tscn" id="6_2umal"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tqkq7"]
-texture = ExtResource("1_wyini")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:0/0 = 0
