@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://ui2bg4g6isus" path="res://assets/sprites/world_tileset.png" id="2_u7fha"]
 [ext_resource type="PackedScene" uid="uid://bc6dsoh82ddqq" path="res://scenes/player.tscn" id="3_jyt47"]
 [ext_resource type="Texture2D" uid="uid://batjnojauhui0" path="res://assets/sprites/backround/SKY.png" id="3_sjj8l"]
-[ext_resource type="PackedScene" path="res://scenes/killzone.tscn" id="4_g5jha"]
+[ext_resource type="PackedScene" uid="uid://bcqvpfo6kg4ia" path="res://scenes/killzone.tscn" id="4_g5jha"]
 [ext_resource type="Texture2D" uid="uid://dfh2bm3o3ajma" path="res://assets/sprites/accessories/stars_sheet.png" id="5_nsgnf"]
 [ext_resource type="Texture2D" uid="uid://d1unomg2si83d" path="res://assets/sprites/backround/blue_planet_v2.png" id="5_ykygy"]
 [ext_resource type="PackedScene" uid="uid://d0li5nuniam74" path="res://scenes/npc.tscn" id="6_2umal"]
@@ -16,7 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://5mcj570kvuls" path="res://scenes/teleport.tscn" id="10_jawn6"]
 [ext_resource type="Texture2D" uid="uid://b10n76c6ctu8a" path="res://assets/sprites/backround/planets.png" id="10_shqbn"]
 [ext_resource type="FontFile" uid="uid://d2jsuoydg1cv8" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="11_5x4vb"]
-[ext_resource type="PackedScene" uid="uid://bekoh2k83mo2" path="res://scenes/rocket.tscn" id="14_hqlu4"]
+[ext_resource type="PackedScene" path="res://scenes/rocket.tscn" id="14_hqlu4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q0ymd"]
 texture = ExtResource("3_sjj8l")
