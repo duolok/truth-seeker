@@ -293,12 +293,12 @@ script = ExtResource("3_wpxak")
 position = Vector2(1.19209e-07, -1)
 scale = Vector2(1.97233, 1.78499)
 color = Color(0.43134, 0.43134, 0.43134, 1)
-energy = 1.2
+energy = 0.8
 shadow_enabled = true
 shadow_filter = 1
 shadow_filter_smooth = 3.0
 texture = ExtResource("4_crni6")
-texture_scale = 0.53
+texture_scale = 0.8
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
 amount = 400

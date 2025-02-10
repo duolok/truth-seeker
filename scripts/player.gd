@@ -37,9 +37,47 @@ func _ready() -> void:
 	add_to_group("player")
 	
 
-
 func _physics_process(delta: float) -> void:
 	$PointLight2D.visible = use_light
+	if dash_cooldown_timer > 0:
+		dash_cooldown_timer -= delta
+
+	if is_on_floor():
+		jump_count = 0
+		if should_shake:
+			camera.start_shake(SHAKE_STRENGHT, 1)
+			should_shake = false
+		
+	if is_on_floor() and Input.is_action_just_pressed("ui_dash") :
+		jump_count = 0
+		animated_sprite_2d.play("dash")
+
+	if Input.is_action_just_pressed("ui_up") and (not is_on_wall() or is_on_floor()):
+		if is_on_floor():
+			velocity.y = JUMP_VELOCITY
+			jump_count += 1
+		elif jump_count < MAX_JUMPS:
+			velocity.y = JUMP_VELOCITY
+			jump_count += 1
+			should_shake = true
+			
+	wall_slide(delta)
+
+	if not is_on_floor() and not is_dashing:
+		velocity.y += GRAVITY * delta
+
+	if is_on_wall():
+		if Input.is_action_just_pressed("ui_right"):
+			velocity.y = JUMP_VELOCITY * 1.5
+			velocity.x = -WALL_PUSHBACK
+			
+		elif Input.is_action_just_pressed("ui_left"):
+			velocity.y = JUMP_VELOCITY * 1.5
+			velocity.x = WALL_PUSHBACK
+		else:
+			animated_sprite_2d.play("wall_cling_right")
+			
+
 	if Input.is_action_just_pressed("ui_dialogue"):
 		var actionables = actionable_finder.get_overlapping_areas()
 		if actionables.size() > 0:
