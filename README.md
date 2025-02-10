@@ -5,7 +5,7 @@ Truth Seeker is a 2D game about betrayal. It contains rich movement system and p
 
 ### Gallery
 
+![tuorial](res/tutorial.png)
 ![world](res/world.jpeg)
 ![dog](res/dog.png)
 ![intro](res/intro.jpeg)
-
