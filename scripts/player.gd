@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 const SPEED = 100
 const SPRINT_MULTIPLIER = 1.8
-const JUMP_VELOCITY = -210
+const JUMP_VELOCITY = -290
 const MAX_JUMPS = 2  
 const DASH_SPEED = 400
 const DASH_DURATION = 0.2
@@ -150,7 +150,7 @@ func _physics_process(delta: float) -> void:
 
 		if is_on_floor() and is_dashing:
 			jump_count = 0
-			animated_sprite_2d.play("ui_dash")
+			animated_sprite_2d.play("dash")
 		elif is_on_floor():
 			jump_count = 0
 			if Input.is_action_pressed("ui_sprint"):
