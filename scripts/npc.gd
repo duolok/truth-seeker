@@ -1,5 +1,5 @@
 extends CharacterBody2D
-
+@onready var canvas_layer: CanvasLayer = $"../CanvasLayer"
 @onready var npc: CharacterBody2D = $"."
 @onready var animator: AnimatedSprite2D = $AnimatedSprite2D
 @export var dialogue_id: String

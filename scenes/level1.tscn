@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://d0fgjgd1dfcih" path="res://assets/sprites/platforms.png" id="1_uw430"]
 [ext_resource type="Texture2D" uid="uid://ui2bg4g6isus" path="res://assets/sprites/world_tileset.png" id="2_rrf6m"]
 [ext_resource type="PackedScene" path="res://scenes/killzone.tscn" id="4_4jxpq"]
-[ext_resource type="PackedScene" uid="uid://d3be0rvxbeml2" path="res://scenes/player.tscn" id="4_8y7yl"]
+[ext_resource type="PackedScene" uid="uid://bc6dsoh82ddqq" path="res://scenes/player.tscn" id="4_8y7yl"]
 [ext_resource type="PackedScene" uid="uid://d0li5nuniam74" path="res://scenes/npc.tscn" id="5_qi7n1"]
 [ext_resource type="PackedScene" uid="uid://dwofx7xb8ol1h" path="res://assets/canvas_modulate.tscn" id="6_rh18u"]
 
@@ -214,7 +214,7 @@ dialogue_id = "djurica"
 position = Vector2(200, -200)
 dialogue_id = "celar"
 
-[node name="player" parent="." instance=ExtResource("4_8y7yl")]
+[node name="player" parent="." groups=["player"] instance=ExtResource("4_8y7yl")]
 position = Vector2(-186, -71)
 
 [node name="CanvasModulate" parent="." instance=ExtResource("6_rh18u")]

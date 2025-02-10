@@ -1,0 +1,105 @@
+[gd_scene load_steps=10 format=3 uid="uid://bekoh2k83mo2"]
+
+[ext_resource type="Texture2D" uid="uid://ba4e1akctfw64" path="res://assets/sprites/player/spaceship.png" id="1_2jixp"]
+[ext_resource type="Script" path="res://scenes/rocket.gd" id="2_avu3x"]
+[ext_resource type="Script" path="res://scenes/rocket_area.gd" id="3_3qwhg"]
+[ext_resource type="FontFile" uid="uid://b3gxby06cxsjq" path="res://assets/fonts/PixelOperator8.ttf" id="4_scshu"]
+[ext_resource type="PackedScene" uid="uid://dlud44oehgodn" path="res://scenes/passkey.tscn" id="5_gldie"]
+
+[sub_resource type="Curve" id="Curve_rgv2j"]
+_data = [Vector2(0.0235849, 1), 0.0, 0.0, 0, 0, Vector2(0.186321, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_u18wx"]
+offsets = PackedFloat32Array(0.00490196, 0.0245098, 0.159314)
+colors = PackedColorArray(1, 1, 1, 1, 0.874762, 0.159244, 0, 1, 0.777528, 0.543313, 1.92523e-07, 1)
+
+[sub_resource type="Curve" id="Curve_18x7w"]
+min_value = -1024.0
+max_value = 1024.0
+_data = [Vector2(0, 200), 0.0, 0.0, 0, 0, Vector2(0.959906, -1024), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nq5pu"]
+size = Vector2(73, 107)
+
+[node name="rocket" type="Sprite2D"]
+texture = ExtResource("1_2jixp")
+script = ExtResource("2_avu3x")
+metadata/password = 0
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+position = Vector2(0, 72)
+emitting = false
+amount = 388
+lifetime = 3.0
+speed_scale = 2.0
+fract_delta = false
+emission_shape = 1
+emission_sphere_radius = 30.0
+scale_amount_max = 50.0
+scale_amount_curve = SubResource("Curve_rgv2j")
+color_ramp = SubResource("Gradient_u18wx")
+anim_speed_min = 1.0
+anim_speed_max = 127.15
+anim_speed_curve = SubResource("Curve_18x7w")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+[node name="Area2D" type="Area2D" parent="." groups=["rocket"]]
+collision_layer = 16
+collision_mask = 23
+script = ExtResource("3_3qwhg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-1.5, 10.5)
+shape = SubResource("RectangleShape2D_nq5pu")
+
+[node name="Label" type="Label" parent="."]
+process_mode = 4
+visible = false
+texture_filter = 5
+offset_left = -60.0
+offset_top = 83.0
+offset_right = 59.0
+offset_bottom = 95.0
+theme_override_fonts/font = ExtResource("4_scshu")
+theme_override_font_sizes/font_size = 8
+text = "Press E to interact"
+horizontal_alignment = 1
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="pass" parent="CanvasLayer" instance=ExtResource("5_gldie")]
+position = Vector2(581, 326)
+scale = Vector2(3, 3)
+metadata/password = 553
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+process_mode = 4
+texture_filter = 5
+offset_left = 245.0
+offset_top = 49.0
+offset_right = 917.0
+offset_bottom = 110.0
+theme_override_fonts/font = ExtResource("4_scshu")
+theme_override_font_sizes/font_size = 48
+text = "Press E to exit"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="CanvasLayer"]
+process_mode = 4
+texture_filter = 5
+offset_left = 245.0
+offset_top = 542.0
+offset_right = 916.0
+offset_bottom = 641.0
+theme_override_fonts/font = ExtResource("4_scshu")
+theme_override_font_sizes/font_size = 48
+text = "Enter correct
+code to liftoff"
+horizontal_alignment = 1
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]

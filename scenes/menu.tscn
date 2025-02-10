@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://cc83woy71warb"]
+[gd_scene load_steps=5 format=3 uid="uid://cc83woy71warb"]
 
 [ext_resource type="FontFile" uid="uid://b3gxby06cxsjq" path="res://assets/fonts/PixelOperator8.ttf" id="1_bx2a6"]
 [ext_resource type="Script" path="res://scripts/menu.gd" id="1_s00jp"]
+[ext_resource type="Texture2D" uid="uid://batjnojauhui0" path="res://assets/sprites/backround/SKY.png" id="2_nnqsu"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_hiesb"]
 
@@ -13,6 +14,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 script = ExtResource("1_s00jp")
 
 [node name="Container" type="VBoxContainer" parent="."]
@@ -28,26 +31,37 @@ offset_right = 46.5
 offset_bottom = 50.5
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 50
+
+[node name="Sky" type="Sprite2D" parent="Container"]
+position = Vector2(499, 300.5)
+scale = Vector2(1.589, 2.049)
+texture = ExtResource("2_nnqsu")
 
 [node name="Label" type="Label" parent="Container"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_bx2a6")
-theme_override_font_sizes/font_size = 50
+theme_override_font_sizes/font_size = 110
 text = "Truth Seeker"
 
 [node name="NewGameButton" type="Button" parent="Container"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_bx2a6")
+theme_override_font_sizes/font_size = 63
 text = "New Game"
 
 [node name="OptionsButton" type="Button" parent="Container"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_bx2a6")
+theme_override_font_sizes/font_size = 64
 text = "Options"
 
 [node name="QuitButton" type="Button" parent="Container"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_bx2a6")
+theme_override_font_sizes/font_size = 64
 text = "Quit"
 
 [connection signal="pressed" from="Container/NewGameButton" to="." method="_on_new_game_button_pressed"]

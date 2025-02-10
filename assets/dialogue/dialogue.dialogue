@@ -28,6 +28,12 @@ Mr. Green: The first digit of the secret code is number 8.
 
 => END
 
+~ level0_npc1
+
+Alfred: The key is 123.
+
+=> END
+
 ~ MrRedSon
 
 Mr. Red Junior: [[Hi|Hello|Howdy]], I the son of infamous Mr.Red.
@@ -91,9 +97,56 @@ Mr. Green: I won't waste you anymore time with my tomfoolery the third number is
 ~ MrLecic
 
 Mr. Lecic: ......
-Mr. Lecic: ......
-Mr. Lecic: ......
-Mr. Lecic: 489
-Mr. Lecic: ......
+Mr. Lecic: the colors
+Mr. Lecic: first red
+Mr. Lecic: second green
+Mr. Lecic: third yellow
+Mr. Lecic: only one tells the truth...
+
+=> END
+
+~ MrHidden
+
+Mr. Hidden: ......
+Mr. Hidden: the colors
+Mr. Hidden: first red
+Mr. Hidden: second green
+Mr. Hidden: third yellow
+Mr. Hidden: thruth is in mere sight...
+Mr. Hidden: count it up...
+
+=> END
+
+~ MrRed2
+
+Mr. Red: [[Hi|Hello|Howdy]], we meet again.
+Mr. Red: Hon Hon.
+Mr. Red: As per tradition I shall give thou the first digit, number 5.
+
+
+=> END
+
+~ MrYellow2
+
+Mr. Yellow: Hmmmmmmmmm.
+Mr. Yellow: Hon hon.
+Mr. Yellow: The second digit is 4 as I recall.
+
+=> END
+
+~ MrGreen2
+
+Mr. Green: This dog has been folowing me since last planet.
+Mr. Green: Hope he doesn't steal the last number.
+Mr. Green: Which is fortunately for you lucky number 7.
+
+=> END
+
+~ EvilLarry
+
+
+Evil Larry: Hi im larry.
+Evil Larry: Nice to meat you :).
+Evil Larry: The code to your rocket is 001 but you should probably go back on foot since these portals can be dangerous.
 
 => END
