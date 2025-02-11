@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://scenes/rocket.gd" id="2_avu3x"]
 [ext_resource type="Script" path="res://scenes/rocket_area.gd" id="3_3qwhg"]
 [ext_resource type="FontFile" uid="uid://b3gxby06cxsjq" path="res://assets/fonts/PixelOperator8.ttf" id="4_scshu"]
-[ext_resource type="PackedScene" uid="uid://dlud44oehgodn" path="res://scenes/passkey.tscn" id="5_gldie"]
+[ext_resource type="PackedScene" uid="uid://7unkk4538ihe" path="res://scenes/passkey.tscn" id="5_gldie"]
 
 [sub_resource type="Curve" id="Curve_rgv2j"]
 _data = [Vector2(0.0235849, 1), 0.0, 0.0, 0, 0, Vector2(0.186321, 0), 0.0, 0.0, 0, 0]
@@ -100,6 +100,9 @@ theme_override_font_sizes/font_size = 48
 text = "Enter correct
 code to liftoff"
 horizontal_alignment = 1
+
+[node name="launch_camera" type="Camera2D" parent="."]
+position = Vector2(0, -60)
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]

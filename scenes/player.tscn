@@ -2,11 +2,11 @@
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_j5riv"]
 [ext_resource type="Texture2D" uid="uid://bpbcx8burf5nt" path="res://assets/sprites/player/astronaut_sheet.png" id="2_1yv8i"]
-[ext_resource type="PackedScene" uid="uid://cqlyqhm6773u8" path="res://scenes/cpu_walking_particles_2d.tscn" id="2_5gp1d"]
+[ext_resource type="PackedScene" uid="uid://ce0barn1awkmn" path="res://scenes/cpu_walking_particles_2d.tscn" id="2_5gp1d"]
 [ext_resource type="Script" path="res://scenes/camera_2d.gd" id="3_wpxak"]
 [ext_resource type="Texture2D" uid="uid://b6o44kn51e2v6" path="res://assets/sprites/light.png" id="4_crni6"]
 [ext_resource type="AudioStream" uid="uid://nr467w8rhvca" path="res://assets/sound/Jump Sound Effect.mp3" id="6_05qee"]
-[ext_resource type="PackedScene" uid="uid://mow56hbj2qhe" path="res://in_game_menu.tscn" id="7_won30"]
+[ext_resource type="PackedScene" uid="uid://i3xq4h7am1vn" path="res://in_game_menu.tscn" id="7_won30"]
 [ext_resource type="AudioStream" uid="uid://b0xkn6lgskftr" path="res://assets/sound/8bit_expl_short_10.wav" id="8_oyspx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m0ce8"]
@@ -282,8 +282,8 @@ collision_mask = 16
 position = Vector2(0.255102, -0.765305)
 shape = SubResource("RectangleShape2D_ncmix")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-offset = Vector2(0, -25)
+[node name="player_camera" type="Camera2D" parent="."]
+position = Vector2(0, -25)
 zoom = Vector2(3.145, 3.145)
 position_smoothing_enabled = true
 position_smoothing_speed = 3.0

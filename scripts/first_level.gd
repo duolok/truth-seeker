@@ -8,4 +8,4 @@ func _ready() -> void:
 
 
 func _on_rocket_rocket_launched() -> void:
-	get_tree().change_scene_to_file("res://scenes/levels/final_level.tscn")
+	get_tree().change_scene_to_file("res://scenes/levels/second_level.tscn")

@@ -14,7 +14,7 @@ const WALL_PUSHBACK = 400
 const DASH_COOLDOWN = 0.6
 
 @export var use_light: bool = false
-@onready var camera: Camera2D = $Camera2D
+@onready var camera: Camera2D = $player_camera
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var actionable_finder: Area2D = $Direction/ActionableFinder
 @onready var point_light: PointLight2D = $PointLight2D

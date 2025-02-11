@@ -41,4 +41,4 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("ui_enter"):
 		if passkey == left_num*100+middle_num*10+right_num:
 			canvas_layer.visible = false
-			rocket._emit_signal()	
+			rocket.start_launch_animation()

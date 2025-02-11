@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=4 uid="uid://bua2o8m8rkvem"]
+[gd_scene load_steps=36 format=4 uid="uid://bua2o8m8rkvem"]
 
 [ext_resource type="Script" path="res://scripts/second_level.gd" id="1_0t0wi"]
 [ext_resource type="Texture2D" uid="uid://lk6mps0sbsxe" path="res://assets/sprites/backround/platforms.png" id="1_pd68g"]
@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://bcqvpfo6kg4ia" path="res://scenes/killzone.tscn" id="9_i4ed8"]
 [ext_resource type="PackedScene" uid="uid://d0li5nuniam74" path="res://scenes/npc.tscn" id="10_y6vgt"]
 [ext_resource type="FontFile" uid="uid://d2jsuoydg1cv8" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="11_tugj5"]
-[ext_resource type="PackedScene" path="res://scenes/rocket.tscn" id="12_3jv6o"]
+[ext_resource type="PackedScene" uid="uid://bekoh2k83mo2" path="res://scenes/rocket.tscn" id="12_3jv6o"]
 [ext_resource type="PackedScene" uid="uid://bc6dsoh82ddqq" path="res://scenes/player.tscn" id="12_l66de"]
 [ext_resource type="Texture2D" uid="uid://tktw6wym1j71" path="res://assets/sprites/space_tilemap.png" id="14_6fx0i"]
 [ext_resource type="Texture2D" uid="uid://b10n76c6ctu8a" path="res://assets/sprites/backround/planets.png" id="15_i6cnf"]
@@ -7447,91 +7447,6 @@ sources/6 = SubResource("TileSetAtlasSource_odve7")
 sources/8 = SubResource("TileSetAtlasSource_ookq4")
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_bqx0v"]
-
-[sub_resource type="Animation" id="Animation_ugsol"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("rocket:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-308, -107)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("AnimationPlayer/cutscene_camera:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-307, -239)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("rocket:emission")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-
-[sub_resource type="Animation" id="Animation_7iyjk"]
-resource_name = "launch"
-length = 8.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("rocket:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(2, 2.16667, 2.26667, 2.33333, 2.36667, 2.5, 2.63333, 2.73333, 2.8, 2.93333, 3.03333, 5, 6.86667),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(-308, -107), Vector2(-293, -107), Vector2(-293, -107), Vector2(-303, -107), Vector2(-311, -108), Vector2(-297, -109), Vector2(-314, -108), Vector2(-301, -109), Vector2(-301, -109), Vector2(-288, -108), Vector2(-295, -106), Vector2(-297, -257), Vector2(-298, -636)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("AnimationPlayer/cutscene_camera:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(-307, -239), Vector2(-307, -239)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("rocket:emission")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(2),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_c8qo4"]
-_data = {
-"RESET": SubResource("Animation_ugsol"),
-"launch": SubResource("Animation_7iyjk")
-}
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cnwuv"]
 texture = ExtResource("2_4ex42")
@@ -15150,14 +15065,6 @@ position = Vector2(-308, -107)
 scale = Vector2(1.917, 1.917)
 metadata/password = 113
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_c8qo4")
-}
-
-[node name="cutscene_camera" type="Camera2D" parent="AnimationPlayer"]
-position = Vector2(-307, -239)
-
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = -1
 offset = Vector2(0, 50)
@@ -15192,5 +15099,4 @@ hframes = 2
 vframes = 2
 frame = 1
 
-[connection signal="start_liftof" from="rocket" to="." method="_on_rocket_start_liftof"]
-[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="rocket_launched" from="rocket" to="." method="_on_rocket_rocket_launched"]
