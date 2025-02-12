@@ -8,4 +8,4 @@ func action() -> void:
 	var dialogue_text = character.dialogue_id
 	print(dialogue_text)
 	
-	DialogueManager.show_example_dialogue_balloon(dialogue_resource, dialogue_text)
+	DialogueManager.show_dialogue_balloon(dialogue_resource, dialogue_text)

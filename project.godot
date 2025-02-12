@@ -22,8 +22,8 @@ BgMusic="*res://scenes/bg_music.tscn"
 
 [dialogue_manager]
 
-editor/advanced/custom_test_scene_path="res://scenes/truth_seeker_dialogue.tscn"
-runtime/balloon_path="res://scenes/truth_seeker_dialogue.tscn"
+editor/advanced/custom_test_scene_path="res://balloon_dialogue/balloon.tscn"
+runtime/balloon_path="res://balloon_dialogue/balloon.tscn"
 
 [display]
 
