@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://cc83woy71warb"]
+[gd_scene load_steps=6 format=3 uid="uid://cc83woy71warb"]
 
 [ext_resource type="FontFile" uid="uid://b3gxby06cxsjq" path="res://assets/fonts/PixelOperator8.ttf" id="1_bx2a6"]
 [ext_resource type="Script" path="res://scripts/menu.gd" id="1_s00jp"]
 [ext_resource type="Texture2D" uid="uid://batjnojauhui0" path="res://assets/sprites/backround/SKY.png" id="2_nnqsu"]
+[ext_resource type="PackedScene" uid="uid://dyoy847gclint" path="res://scenes/controls_menu.tscn" id="4_5io0f"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_hiesb"]
 
@@ -17,52 +18,88 @@ grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("1_s00jp")
+is_in_game = false
+metadata/_edit_vertical_guides_ = [-130.0]
 
-[node name="Container" type="VBoxContainer" parent="."]
+[node name="BackgrounImage" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_nnqsu")
+expand_mode = 2
+
+[node name="MainMenu" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -46.5
-offset_top = -50.5
-offset_right = 46.5
-offset_bottom = 50.5
+offset_left = -550.0
+offset_top = -238.5
+offset_right = 550.0
+offset_bottom = 238.5
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_constants/separation = 50
 
-[node name="Sky" type="Sprite2D" parent="Container"]
-position = Vector2(499, 300.5)
-scale = Vector2(1.589, 2.049)
-texture = ExtResource("2_nnqsu")
-
-[node name="Label" type="Label" parent="Container"]
+[node name="Label" type="Label" parent="MainMenu"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_bx2a6")
 theme_override_font_sizes/font_size = 110
 text = "Truth Seeker"
 
-[node name="NewGameButton" type="Button" parent="Container"]
+[node name="Resume" type="Button" parent="MainMenu"]
+visible = false
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_bx2a6")
+theme_override_font_sizes/font_size = 64
+text = "Resume"
+
+[node name="NewGameButton" type="Button" parent="MainMenu"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_bx2a6")
 theme_override_font_sizes/font_size = 63
 text = "New Game"
 
-[node name="OptionsButton" type="Button" parent="Container"]
+[node name="OptionsButton" type="Button" parent="MainMenu"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_bx2a6")
 theme_override_font_sizes/font_size = 64
 text = "Options"
 
-[node name="QuitButton" type="Button" parent="Container"]
+[node name="QuitButton" type="Button" parent="MainMenu"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_bx2a6")
 theme_override_font_sizes/font_size = 64
 text = "Quit"
 
-[connection signal="pressed" from="Container/NewGameButton" to="." method="_on_new_game_button_pressed"]
-[connection signal="pressed" from="Container/QuitButton" to="." method="_on_quit_button_pressed"]
+[node name="ControlsMenu" parent="." instance=ExtResource("4_5io0f")]
+visible = false
+layout_mode = 1
+grow_vertical = 2
+
+[node name="BackButton" type="Button" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.05
+anchor_top = 0.05
+anchor_right = 0.05
+anchor_bottom = 0.05
+offset_right = 8.0
+offset_bottom = 8.0
+theme_override_fonts/font = ExtResource("1_bx2a6")
+theme_override_font_sizes/font_size = 24
+text = "Back"
+
+[connection signal="pressed" from="MainMenu/Resume" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="MainMenu/NewGameButton" to="." method="_on_new_game_button_pressed"]
+[connection signal="pressed" from="MainMenu/OptionsButton" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="MainMenu/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]

@@ -1,0 +1,831 @@
+[gd_scene load_steps=78 format=3 uid="uid://dyoy847gclint"]
+
+[ext_resource type="FontFile" uid="uid://b3gxby06cxsjq" path="res://assets/fonts/PixelOperator8.ttf" id="1_42ldc"]
+[ext_resource type="Script" path="res://scenes/controls_menu.gd" id="1_g7lu4"]
+[ext_resource type="Texture2D" uid="uid://ct6vuumouvyav" path="res://assets/sprites/keys/Gerald's Keys/Keys/A-Key.png" id="2_x7get"]
+[ext_resource type="Texture2D" uid="uid://dbr7xsjq0luqe" path="res://assets/sprites/keys/Gerald's Keys/Keys/D-Key.png" id="3_sf6kh"]
+[ext_resource type="Texture2D" uid="uid://d0hkmsecjrmex" path="res://assets/sprites/keys/UI ICONS_WHITE_pixel art_Sprite Sheet.png" id="4_yugrn"]
+[ext_resource type="Texture2D" uid="uid://bpbcx8burf5nt" path="res://assets/sprites/player/astronaut_sheet.png" id="5_k1mcs"]
+[ext_resource type="Texture2D" uid="uid://s3q482r3ml1l" path="res://assets/sprites/keys/Gerald's Keys/Keys/W-Key.png" id="6_n0lq7"]
+[ext_resource type="Texture2D" uid="uid://v7c2q0aold5c" path="res://assets/sprites/keys/Gerald's Keys/Keys/Shift-Key.png" id="7_nok1q"]
+[ext_resource type="Texture2D" uid="uid://bl4dudejhcw3e" path="res://assets/sprites/keys/Gerald's Keys/Keys/J-Key.png" id="8_v62ga"]
+[ext_resource type="Texture2D" uid="uid://bq27b0d0wv801" path="res://assets/sprites/keys/Gerald's Keys/Keys/E-Key.png" id="9_48ot5"]
+[ext_resource type="Texture2D" uid="uid://dbme43h5gpu7x" path="res://assets/sprites/keys/Gerald's Keys/Keys/Space-Key.png" id="10_ontf4"]
+[ext_resource type="Texture2D" uid="uid://b5ufv7k6sfu44" path="res://assets/sprites/keys/Gerald's Keys/Keys/X-Key.png" id="11_vxtwi"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p4t0s"]
+atlas = ExtResource("2_x7get")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wfeey"]
+atlas = ExtResource("2_x7get")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xp7nx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p4t0s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wfeey")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2olqk"]
+atlas = ExtResource("3_sf6kh")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i3joo"]
+atlas = ExtResource("3_sf6kh")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6dhjy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2olqk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i3joo")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_36xc2"]
+atlas = ExtResource("4_yugrn")
+region = Rect2(512, 384, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8j6kv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_36xc2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_53v1w"]
+atlas = ExtResource("5_k1mcs")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8nxut"]
+atlas = ExtResource("5_k1mcs")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gqhli"]
+atlas = ExtResource("5_k1mcs")
+region = Rect2(64, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u47bh"]
+atlas = ExtResource("5_k1mcs")
+region = Rect2(96, 64, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4qvri"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_53v1w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8nxut")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gqhli")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u47bh")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_remkb"]
+atlas = ExtResource("6_n0lq7")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hkrhr"]
+atlas = ExtResource("6_n0lq7")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_il743"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_remkb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hkrhr")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_81n6y"]
+atlas = ExtResource("5_k1mcs")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t07e4"]
+atlas = ExtResource("5_k1mcs")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rjjgs"]
+atlas = ExtResource("5_k1mcs")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cfwpt"]
+atlas = ExtResource("5_k1mcs")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w722a"]
+atlas = ExtResource("5_k1mcs")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hhhpf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_81n6y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t07e4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rjjgs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cfwpt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w722a")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uuusl"]
+atlas = ExtResource("5_k1mcs")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bg6gw"]
+atlas = ExtResource("5_k1mcs")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uy3s1"]
+atlas = ExtResource("5_k1mcs")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s8ip0"]
+atlas = ExtResource("5_k1mcs")
+region = Rect2(96, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tx5mn"]
+atlas = ExtResource("5_k1mcs")
+region = Rect2(0, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xec60"]
+atlas = ExtResource("5_k1mcs")
+region = Rect2(32, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bgmdo"]
+atlas = ExtResource("5_k1mcs")
+region = Rect2(64, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bha2l"]
+atlas = ExtResource("5_k1mcs")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_f6c3x"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uuusl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bg6gw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uy3s1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s8ip0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tx5mn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xec60")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bgmdo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bha2l")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r5flk"]
+atlas = ExtResource("7_nok1q")
+region = Rect2(0, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q6o2x"]
+atlas = ExtResource("7_nok1q")
+region = Rect2(48, 0, 48, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qaprn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r5flk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q6o2x")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g1pve"]
+atlas = ExtResource("5_k1mcs")
+region = Rect2(0, 160, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jrwro"]
+atlas = ExtResource("5_k1mcs")
+region = Rect2(32, 160, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pw3is"]
+atlas = ExtResource("5_k1mcs")
+region = Rect2(64, 160, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_080g5"]
+atlas = ExtResource("5_k1mcs")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0hw65"]
+atlas = ExtResource("5_k1mcs")
+region = Rect2(0, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m0qqb"]
+atlas = ExtResource("5_k1mcs")
+region = Rect2(0, 160, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4272y"]
+atlas = ExtResource("5_k1mcs")
+region = Rect2(32, 160, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nqahi"]
+atlas = ExtResource("5_k1mcs")
+region = Rect2(64, 160, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ay7io"]
+atlas = ExtResource("5_k1mcs")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_it2wq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g1pve")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jrwro")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pw3is")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_080g5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0hw65")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m0qqb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4272y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nqahi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ay7io")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w363q"]
+atlas = ExtResource("8_v62ga")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n57xw"]
+atlas = ExtResource("8_v62ga")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dwn74"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w363q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n57xw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_svux6"]
+atlas = ExtResource("5_k1mcs")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p30lb"]
+atlas = ExtResource("5_k1mcs")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pcglb"]
+atlas = ExtResource("5_k1mcs")
+region = Rect2(0, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m081b"]
+atlas = ExtResource("5_k1mcs")
+region = Rect2(32, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ddgfr"]
+atlas = ExtResource("5_k1mcs")
+region = Rect2(64, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jka36"]
+atlas = ExtResource("5_k1mcs")
+region = Rect2(96, 128, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_x46vk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_svux6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p30lb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pcglb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m081b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ddgfr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jka36")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_al124"]
+atlas = ExtResource("5_k1mcs")
+region = Rect2(0, 192, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_aa7ve"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_al124")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u0wfu"]
+atlas = ExtResource("9_48ot5")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nprix"]
+atlas = ExtResource("9_48ot5")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_opcfq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u0wfu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nprix")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6qaa7"]
+atlas = ExtResource("10_ontf4")
+region = Rect2(0, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tb5xa"]
+atlas = ExtResource("10_ontf4")
+region = Rect2(64, 0, 64, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hgdtc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6qaa7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tb5xa")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4fn3s"]
+atlas = ExtResource("11_vxtwi")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3hlhs"]
+atlas = ExtResource("11_vxtwi")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xyteg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4fn3s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3hlhs")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[node name="ScrollContainer" type="ScrollContainer"]
+anchors_preset = -1
+anchor_left = 0.05
+anchor_top = 0.1
+anchor_right = 0.95
+anchor_bottom = 0.9
+grow_horizontal = 2
+grow_vertical = 0
+script = ExtResource("1_g7lu4")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 32
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_42ldc")
+theme_override_font_sizes/font_size = 48
+text = "Controls"
+horizontal_alignment = 1
+
+[node name="Movement" type="HBoxContainer" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+alignment = 1
+
+[node name="Control2" type="Control" parent="VBoxContainer/Movement"]
+custom_minimum_size = Vector2(96, 96)
+layout_mode = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="VBoxContainer/Movement/Control2"]
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_xp7nx")
+autoplay = "default"
+offset = Vector2(16, 16)
+
+[node name="Control" type="Control" parent="VBoxContainer/Movement"]
+custom_minimum_size = Vector2(96, 96)
+layout_mode = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="VBoxContainer/Movement/Control"]
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_6dhjy")
+autoplay = "default"
+offset = Vector2(16, 16)
+
+[node name="Control3" type="Control" parent="VBoxContainer/Movement"]
+custom_minimum_size = Vector2(96, 96)
+layout_mode = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="VBoxContainer/Movement/Control3"]
+scale = Vector2(0.75, 0.75)
+sprite_frames = SubResource("SpriteFrames_8j6kv")
+offset = Vector2(64, 64)
+
+[node name="Control4" type="Control" parent="VBoxContainer/Movement"]
+custom_minimum_size = Vector2(96, 96)
+layout_mode = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="VBoxContainer/Movement/Control4"]
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_4qvri")
+autoplay = "default"
+frame_progress = 0.532895
+offset = Vector2(16, 16)
+
+[node name="Jump" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Control6" type="Control" parent="VBoxContainer/Jump"]
+custom_minimum_size = Vector2(96, 96)
+layout_mode = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="VBoxContainer/Jump/Control6"]
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_il743")
+autoplay = "default"
+offset = Vector2(16, 16)
+
+[node name="Control7" type="Control" parent="VBoxContainer/Jump"]
+custom_minimum_size = Vector2(96, 96)
+layout_mode = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="VBoxContainer/Jump/Control7"]
+scale = Vector2(0.75, 0.75)
+sprite_frames = SubResource("SpriteFrames_8j6kv")
+offset = Vector2(64, 64)
+
+[node name="Control8" type="Control" parent="VBoxContainer/Jump"]
+custom_minimum_size = Vector2(96, 96)
+layout_mode = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="VBoxContainer/Jump/Control8"]
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_hhhpf")
+autoplay = "default"
+frame_progress = 0.752344
+offset = Vector2(16, 16)
+
+[node name="DoubleJump" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Control9" type="Control" parent="VBoxContainer/DoubleJump"]
+custom_minimum_size = Vector2(96, 96)
+layout_mode = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="VBoxContainer/DoubleJump/Control9"]
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_il743")
+autoplay = "default"
+offset = Vector2(16, 16)
+
+[node name="Control6" type="Control" parent="VBoxContainer/DoubleJump"]
+custom_minimum_size = Vector2(96, 96)
+layout_mode = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="VBoxContainer/DoubleJump/Control6"]
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_il743")
+autoplay = "default"
+offset = Vector2(16, 16)
+
+[node name="Control7" type="Control" parent="VBoxContainer/DoubleJump"]
+custom_minimum_size = Vector2(96, 96)
+layout_mode = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="VBoxContainer/DoubleJump/Control7"]
+scale = Vector2(0.75, 0.75)
+sprite_frames = SubResource("SpriteFrames_8j6kv")
+offset = Vector2(64, 64)
+
+[node name="Control8" type="Control" parent="VBoxContainer/DoubleJump"]
+custom_minimum_size = Vector2(96, 96)
+layout_mode = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="VBoxContainer/DoubleJump/Control8"]
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_f6c3x")
+autoplay = "default"
+frame_progress = 0.972653
+offset = Vector2(16, 16)
+
+[node name="Dash" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Control9" type="Control" parent="VBoxContainer/Dash"]
+custom_minimum_size = Vector2(96, 96)
+layout_mode = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="VBoxContainer/Dash/Control9"]
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_qaprn")
+autoplay = "default"
+offset = Vector2(16, 16)
+
+[node name="Control7" type="Control" parent="VBoxContainer/Dash"]
+custom_minimum_size = Vector2(96, 96)
+layout_mode = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="VBoxContainer/Dash/Control7"]
+scale = Vector2(0.75, 0.75)
+sprite_frames = SubResource("SpriteFrames_8j6kv")
+offset = Vector2(64, 64)
+
+[node name="Control8" type="Control" parent="VBoxContainer/Dash"]
+custom_minimum_size = Vector2(96, 96)
+layout_mode = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="VBoxContainer/Dash/Control8"]
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_it2wq")
+autoplay = "default"
+frame_progress = 0.561555
+offset = Vector2(16, 16)
+
+[node name="Sprint" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Control6" type="Control" parent="VBoxContainer/Sprint"]
+custom_minimum_size = Vector2(96, 96)
+layout_mode = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="VBoxContainer/Sprint/Control6"]
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_dwn74")
+autoplay = "default"
+offset = Vector2(16, 16)
+
+[node name="Control7" type="Control" parent="VBoxContainer/Sprint"]
+custom_minimum_size = Vector2(96, 96)
+layout_mode = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="VBoxContainer/Sprint/Control7"]
+scale = Vector2(0.75, 0.75)
+sprite_frames = SubResource("SpriteFrames_8j6kv")
+offset = Vector2(64, 64)
+
+[node name="Control8" type="Control" parent="VBoxContainer/Sprint"]
+custom_minimum_size = Vector2(96, 96)
+layout_mode = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="VBoxContainer/Sprint/Control8"]
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_x46vk")
+autoplay = "default"
+offset = Vector2(16, 16)
+
+[node name="WallJump" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Control2" type="Control" parent="VBoxContainer/WallJump"]
+custom_minimum_size = Vector2(96, 96)
+layout_mode = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="VBoxContainer/WallJump/Control2"]
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_xp7nx")
+autoplay = "default"
+offset = Vector2(16, 16)
+
+[node name="Control" type="Control" parent="VBoxContainer/WallJump"]
+custom_minimum_size = Vector2(96, 96)
+layout_mode = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="VBoxContainer/WallJump/Control"]
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_6dhjy")
+autoplay = "default"
+offset = Vector2(16, 16)
+
+[node name="Control7" type="Control" parent="VBoxContainer/WallJump"]
+custom_minimum_size = Vector2(96, 96)
+layout_mode = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="VBoxContainer/WallJump/Control7"]
+scale = Vector2(0.75, 0.75)
+sprite_frames = SubResource("SpriteFrames_8j6kv")
+offset = Vector2(64, 64)
+
+[node name="Control8" type="Control" parent="VBoxContainer/WallJump"]
+custom_minimum_size = Vector2(96, 96)
+layout_mode = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="VBoxContainer/WallJump/Control8"]
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_aa7ve")
+autoplay = "default"
+frame_progress = 0.715313
+offset = Vector2(16, 16)
+
+[node name="Interact" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Control6" type="Control" parent="VBoxContainer/Interact"]
+custom_minimum_size = Vector2(96, 96)
+layout_mode = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="VBoxContainer/Interact/Control6"]
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_opcfq")
+autoplay = "default"
+frame_progress = 0.641206
+offset = Vector2(16, 16)
+
+[node name="Control7" type="Control" parent="VBoxContainer/Interact"]
+custom_minimum_size = Vector2(96, 96)
+layout_mode = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="VBoxContainer/Interact/Control7"]
+scale = Vector2(0.75, 0.75)
+sprite_frames = SubResource("SpriteFrames_8j6kv")
+offset = Vector2(64, 64)
+
+[node name="Label" type="Label" parent="VBoxContainer/Interact"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_42ldc")
+theme_override_font_sizes/font_size = 32
+text = "Interact"
+
+[node name="Talk" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Control6" type="Control" parent="VBoxContainer/Talk"]
+custom_minimum_size = Vector2(192, 96)
+layout_mode = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="VBoxContainer/Talk/Control6"]
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_hgdtc")
+autoplay = "default"
+frame_progress = 0.694792
+offset = Vector2(32, 16)
+
+[node name="Control7" type="Control" parent="VBoxContainer/Talk"]
+custom_minimum_size = Vector2(96, 96)
+layout_mode = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="VBoxContainer/Talk/Control7"]
+scale = Vector2(0.75, 0.75)
+sprite_frames = SubResource("SpriteFrames_8j6kv")
+offset = Vector2(64, 64)
+
+[node name="Label" type="Label" parent="VBoxContainer/Talk"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_42ldc")
+theme_override_font_sizes/font_size = 32
+text = "Talk"
+
+[node name="SkipTalk" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Control6" type="Control" parent="VBoxContainer/SkipTalk"]
+custom_minimum_size = Vector2(96, 96)
+layout_mode = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="VBoxContainer/SkipTalk/Control6"]
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_xyteg")
+autoplay = "default"
+frame_progress = 0.317444
+offset = Vector2(16, 16)
+
+[node name="Control7" type="Control" parent="VBoxContainer/SkipTalk"]
+custom_minimum_size = Vector2(96, 96)
+layout_mode = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="VBoxContainer/SkipTalk/Control7"]
+scale = Vector2(0.75, 0.75)
+sprite_frames = SubResource("SpriteFrames_8j6kv")
+offset = Vector2(64, 64)
+
+[node name="Label" type="Label" parent="VBoxContainer/SkipTalk"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_42ldc")
+theme_override_font_sizes/font_size = 32
+text = "Speed up Dialog"
