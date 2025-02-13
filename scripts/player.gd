@@ -20,6 +20,7 @@ const DASH_COOLDOWN = 0.6
 @onready var point_light: PointLight2D = $PointLight2D
 @onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
 @onready var audio_stream_player_2d_2: AudioStreamPlayer2D = $AudioStreamPlayer2D2
+@onready var menu: Control = $Screen/Menu
 
 @export var particle_scene: PackedScene
 
@@ -217,5 +218,5 @@ func wall_slide(delta: float) -> void:
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("ui_menu"):
-		$CanvasLayer.visible = not $CanvasLayer.visible
+		menu.visible = true
 		
