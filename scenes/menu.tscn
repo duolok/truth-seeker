@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://cc83woy71warb"]
 
-[ext_resource type="FontFile" uid="uid://b3gxby06cxsjq" path="res://assets/fonts/PixelOperator8.ttf" id="1_bx2a6"]
+[ext_resource type="FontFile" uid="uid://b3gxby06cxsjq" path="res://assets/GUI/fonts/PixelOperator8.ttf" id="1_bx2a6"]
 [ext_resource type="Script" path="res://scripts/menu.gd" id="1_s00jp"]
 [ext_resource type="Texture2D" uid="uid://batjnojauhui0" path="res://assets/sprites/backround/SKY.png" id="2_nnqsu"]
 [ext_resource type="PackedScene" uid="uid://dyoy847gclint" path="res://scenes/controls_menu.tscn" id="4_5io0f"]

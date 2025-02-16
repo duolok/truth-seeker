@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scripts/teleport.gd" id="1_4s81c"]
 [ext_resource type="Texture2D" uid="uid://dgfc40bb1tbea" path="res://assets/sprites/backround/portal_sheet.png" id="2_emnyi"]
 [ext_resource type="Script" path="res://scripts/teleport_area.gd" id="3_574s8"]
-[ext_resource type="FontFile" uid="uid://b3gxby06cxsjq" path="res://assets/fonts/PixelOperator8.ttf" id="3_cj3kj"]
+[ext_resource type="FontFile" uid="uid://b3gxby06cxsjq" path="res://assets/GUI/fonts/PixelOperator8.ttf" id="3_cj3kj"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_50fa7"]
 atlas = ExtResource("2_emnyi")

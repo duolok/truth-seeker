@@ -11,7 +11,7 @@
 [ext_resource type="Script" path="res://scripts/but_1_up_2.gd" id="9_uufxo"]
 [ext_resource type="Script" path="res://scripts/but_2_up_2.gd" id="10_4th67"]
 [ext_resource type="Script" path="res://scripts/but_3_up_2.gd" id="11_k6g50"]
-[ext_resource type="FontFile" uid="uid://d2jsuoydg1cv8" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="12_2onj6"]
+[ext_resource type="FontFile" uid="uid://d2jsuoydg1cv8" path="res://assets/GUI/fonts/PixelOperator8-Bold.ttf" id="12_2onj6"]
 
 [node name="pass" type="Node2D"]
 script = ExtResource("1_22hkd")

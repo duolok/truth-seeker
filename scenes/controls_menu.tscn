@@ -1,6 +1,6 @@
 [gd_scene load_steps=78 format=3 uid="uid://dyoy847gclint"]
 
-[ext_resource type="FontFile" uid="uid://b3gxby06cxsjq" path="res://assets/fonts/PixelOperator8.ttf" id="1_42ldc"]
+[ext_resource type="FontFile" uid="uid://b3gxby06cxsjq" path="res://assets/GUI/fonts/PixelOperator8.ttf" id="1_42ldc"]
 [ext_resource type="Script" path="res://scenes/controls_menu.gd" id="1_g7lu4"]
 [ext_resource type="Texture2D" uid="uid://ct6vuumouvyav" path="res://assets/sprites/keys/Gerald's Keys/Keys/A-Key.png" id="2_x7get"]
 [ext_resource type="Texture2D" uid="uid://dbr7xsjq0luqe" path="res://assets/sprites/keys/Gerald's Keys/Keys/D-Key.png" id="3_sf6kh"]

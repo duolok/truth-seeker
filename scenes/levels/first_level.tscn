@@ -12,9 +12,9 @@
 [ext_resource type="Texture2D" uid="uid://m5kvbw3beswr" path="res://assets/sprites/backround/deepend.png" id="10_gp3a3"]
 [ext_resource type="Texture2D" uid="uid://b10n76c6ctu8a" path="res://assets/sprites/backround/planets.png" id="11_gscca"]
 [ext_resource type="PackedScene" uid="uid://5mcj570kvuls" path="res://scenes/teleport.tscn" id="12_e3pvu"]
-[ext_resource type="PackedScene" path="res://scenes/killzone.tscn" id="13_jg150"]
+[ext_resource type="PackedScene" uid="uid://bcqvpfo6kg4ia" path="res://scenes/killzone.tscn" id="13_jg150"]
 [ext_resource type="PackedScene" uid="uid://d0li5nuniam74" path="res://scenes/npc.tscn" id="14_kwqtc"]
-[ext_resource type="FontFile" uid="uid://d2jsuoydg1cv8" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="15_fe8i8"]
+[ext_resource type="FontFile" uid="uid://d2jsuoydg1cv8" path="res://assets/GUI/fonts/PixelOperator8-Bold.ttf" id="15_fe8i8"]
 [ext_resource type="PackedScene" uid="uid://bc6dsoh82ddqq" path="res://scenes/player.tscn" id="16_wvoho"]
 [ext_resource type="PackedScene" uid="uid://bekoh2k83mo2" path="res://scenes/rocket.tscn" id="17_lyaf6"]
 

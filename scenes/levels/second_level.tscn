@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://c4aqwusuu6pkc" path="res://assets/sprites/backround/random_assets.png" id="7_pmoxv"]
 [ext_resource type="PackedScene" uid="uid://bcqvpfo6kg4ia" path="res://scenes/killzone.tscn" id="9_i4ed8"]
 [ext_resource type="PackedScene" uid="uid://d0li5nuniam74" path="res://scenes/npc.tscn" id="10_y6vgt"]
-[ext_resource type="FontFile" uid="uid://d2jsuoydg1cv8" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="11_tugj5"]
+[ext_resource type="FontFile" uid="uid://d2jsuoydg1cv8" path="res://assets/GUI/fonts/PixelOperator8-Bold.ttf" id="11_tugj5"]
 [ext_resource type="PackedScene" uid="uid://bekoh2k83mo2" path="res://scenes/rocket.tscn" id="12_3jv6o"]
 [ext_resource type="PackedScene" uid="uid://bc6dsoh82ddqq" path="res://scenes/player.tscn" id="12_l66de"]
 [ext_resource type="Texture2D" uid="uid://tktw6wym1j71" path="res://assets/sprites/space_tilemap.png" id="14_6fx0i"]

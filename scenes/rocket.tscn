@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://ba4e1akctfw64" path="res://assets/sprites/player/spaceship.png" id="1_2jixp"]
 [ext_resource type="Script" path="res://scenes/rocket.gd" id="2_avu3x"]
 [ext_resource type="Script" path="res://scenes/rocket_area.gd" id="3_3qwhg"]
-[ext_resource type="FontFile" uid="uid://b3gxby06cxsjq" path="res://assets/fonts/PixelOperator8.ttf" id="4_scshu"]
+[ext_resource type="FontFile" uid="uid://b3gxby06cxsjq" path="res://assets/GUI/fonts/PixelOperator8.ttf" id="4_scshu"]
 [ext_resource type="PackedScene" uid="uid://7unkk4538ihe" path="res://scenes/passkey.tscn" id="5_gldie"]
 
 [sub_resource type="Curve" id="Curve_rgv2j"]

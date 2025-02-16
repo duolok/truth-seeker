@@ -10,10 +10,13 @@ config_version=5
 
 [application]
 
-config/name="TruthSeeker"
+config/name="Truth Seeker : 0.1v"
 run/main_scene="res://scenes/menu.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
-config/icon="res://icon.svg"
+boot_splash/bg_color=Color(0.474245, 0.73967, 1, 1)
+boot_splash/image="res://assets/sprites/cica/Idle_2.png"
+boot_splash/fullsize=false
+config/icon="res://assets/sprites/player/astronaut_idle_1.png"
 
 [autoload]
 
@@ -27,7 +30,9 @@ runtime/balloon_path="res://balloon_dialogue/balloon.tscn"
 
 [display]
 
+window/size/mode=3
 window/vsync/vsync_mode=0
+mouse_cursor/custom_image="res://assets/GUI/RPG Cursors/Cursor Pointer.png"
 
 [dotnet]
 
@@ -103,7 +108,7 @@ ui_quit={
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://assets/dialogue/main.dialogue", "res://assets/dialogue/dialogue.dialogue")
+locale/translations_pot_files=PackedStringArray("res://assets/GUI/dialogue/dialogue.dialogue", "res://assets/GUI/dialogue/main.dialogue")
 
 [layer_names]
 
