@@ -3,10 +3,9 @@ extends Control
 @onready var backgroun_image: TextureRect = $BackgrounImage
 @onready var main_menu: VBoxContainer = $MainMenu
 @onready var back_button: Button = $BackButton
-@onready var controls_menu: ScrollContainer = $ControlsMenu
 @export var is_in_game: bool = true
 @onready var resume: Button = $MainMenu/Resume
-@onready var settings_menu: Control = $SettingsMenu
+@onready var settings_menu: Control = $OptionsMenu
 
 func _ready() -> void:
 	if is_in_game:

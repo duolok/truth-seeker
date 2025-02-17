@@ -1,9 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://cc83woy71warb"]
+[gd_scene load_steps=6 format=3 uid="uid://cc83woy71warb"]
 
 [ext_resource type="FontFile" uid="uid://b3gxby06cxsjq" path="res://assets/GUI/fonts/PixelOperator8.ttf" id="1_bx2a6"]
 [ext_resource type="Script" path="res://scripts/menu.gd" id="1_s00jp"]
 [ext_resource type="Texture2D" uid="uid://batjnojauhui0" path="res://assets/sprites/backround/SKY.png" id="2_nnqsu"]
-[ext_resource type="PackedScene" uid="uid://dyoy847gclint" path="res://scenes/controls_menu.tscn" id="4_5io0f"]
 [ext_resource type="PackedScene" uid="uid://b4oknrci8eb4b" path="res://game_settings/settings_menu.tscn" id="5_275aj"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_hiesb"]
@@ -80,15 +79,7 @@ theme_override_fonts/font = ExtResource("1_bx2a6")
 theme_override_font_sizes/font_size = 64
 text = "Quit"
 
-[node name="ControlsMenu" parent="." instance=ExtResource("4_5io0f")]
-visible = false
-layout_mode = 1
-grow_vertical = 2
-
-[node name="VBoxContainer" parent="ControlsMenu" index="0"]
-custom_minimum_size = Vector2(100, 100)
-
-[node name="SettingsMenu" parent="." instance=ExtResource("5_275aj")]
+[node name="OptionsMenu" parent="." instance=ExtResource("5_275aj")]
 visible = false
 layout_mode = 1
 
@@ -111,5 +102,3 @@ text = "Back"
 [connection signal="pressed" from="MainMenu/OptionsButton" to="." method="_on_options_button_pressed"]
 [connection signal="pressed" from="MainMenu/QuitButton" to="." method="_on_quit_button_pressed"]
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
-
-[editable path="ControlsMenu"]
