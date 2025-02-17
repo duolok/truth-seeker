@@ -41,7 +41,11 @@ project/assembly_name="TruthSeeker"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg", "res://addons/ggs/plugin.cfg", "res://addons/godot-flexbox/plugin.cfg")
+enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg", "res://addons/ggs/plugin.cfg")
+
+[gui]
+
+theme/custom="res://assets/GUI/theme.tres"
 
 [input]
 
