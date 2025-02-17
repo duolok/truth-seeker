@@ -16,7 +16,7 @@ config/features=PackedStringArray("4.3", "Forward Plus")
 boot_splash/bg_color=Color(0.474245, 0.73967, 1, 1)
 boot_splash/image="res://assets/sprites/cica/Idle_2.png"
 boot_splash/fullsize=false
-config/icon="res://assets/sprites/player/astronaut_idle_1.png"
+config/icon="res://assets/sprites/player/spaceship.png"
 
 [autoload]
 
