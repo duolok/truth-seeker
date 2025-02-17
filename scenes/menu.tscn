@@ -1,11 +1,25 @@
-[gd_scene load_steps=6 format=3 uid="uid://cc83woy71warb"]
+[gd_scene load_steps=10 format=3 uid="uid://cc83woy71warb"]
 
 [ext_resource type="FontFile" uid="uid://b3gxby06cxsjq" path="res://assets/GUI/fonts/PixelOperator8.ttf" id="1_bx2a6"]
 [ext_resource type="Script" path="res://scripts/menu.gd" id="1_s00jp"]
 [ext_resource type="Texture2D" uid="uid://batjnojauhui0" path="res://assets/sprites/backround/SKY.png" id="2_nnqsu"]
-[ext_resource type="PackedScene" uid="uid://dyoy847gclint" path="res://scenes/controls_menu.tscn" id="4_5io0f"]
+[ext_resource type="FontFile" uid="uid://d2jsuoydg1cv8" path="res://assets/GUI/fonts/PixelOperator8-Bold.ttf" id="3_oeeg6"]
+[ext_resource type="Theme" uid="uid://co5hodhbt85bm" path="res://assets/GUI/button_theme.tres" id="4_enfb6"]
+[ext_resource type="PackedScene" uid="uid://b4oknrci8eb4b" path="res://game_settings/settings_menu.tscn" id="5_275aj"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_hiesb"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7wc3v"]
+
+[sub_resource type="Theme" id="Theme_olah5"]
+default_font = ExtResource("3_oeeg6")
+default_font_size = 1205
+Label/colors/font_color = Color(1, 1, 1, 1)
+Label/colors/font_outline_color = Color(0, 0, 0, 1)
+Label/colors/font_shadow_color = Color(0, 0, 0, 1)
+Label/constants/line_spacing = 100
+Label/font_sizes/font_size = 29
+Label/styles/normal = SubResource("StyleBoxTexture_7wc3v")
 
 [node name="Control" type="Control"]
 material = SubResource("CanvasItemMaterial_hiesb")
@@ -50,6 +64,7 @@ theme_override_constants/separation = 50
 
 [node name="Label" type="Label" parent="MainMenu"]
 layout_mode = 2
+theme = SubResource("Theme_olah5")
 theme_override_fonts/font = ExtResource("1_bx2a6")
 theme_override_font_sizes/font_size = 110
 text = "Truth Seeker"
@@ -57,32 +72,35 @@ text = "Truth Seeker"
 [node name="Resume" type="Button" parent="MainMenu"]
 visible = false
 layout_mode = 2
+theme = ExtResource("4_enfb6")
 theme_override_fonts/font = ExtResource("1_bx2a6")
 theme_override_font_sizes/font_size = 64
 text = "Resume"
 
 [node name="NewGameButton" type="Button" parent="MainMenu"]
 layout_mode = 2
+theme = ExtResource("4_enfb6")
 theme_override_fonts/font = ExtResource("1_bx2a6")
 theme_override_font_sizes/font_size = 63
 text = "New Game"
 
 [node name="OptionsButton" type="Button" parent="MainMenu"]
 layout_mode = 2
+theme = ExtResource("4_enfb6")
 theme_override_fonts/font = ExtResource("1_bx2a6")
 theme_override_font_sizes/font_size = 64
 text = "Options"
 
 [node name="QuitButton" type="Button" parent="MainMenu"]
 layout_mode = 2
+theme = ExtResource("4_enfb6")
 theme_override_fonts/font = ExtResource("1_bx2a6")
 theme_override_font_sizes/font_size = 64
 text = "Quit"
 
-[node name="ControlsMenu" parent="." instance=ExtResource("4_5io0f")]
+[node name="OptionsMenu" parent="." instance=ExtResource("5_275aj")]
 visible = false
 layout_mode = 1
-grow_vertical = 2
 
 [node name="BackButton" type="Button" parent="."]
 visible = false

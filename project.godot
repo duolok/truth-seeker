@@ -22,6 +22,7 @@ config/icon="res://assets/sprites/player/astronaut_idle_1.png"
 
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 BgMusic="*res://scenes/bg_music.tscn"
+GGS="*res://addons/ggs/plugin/singleton/ggs.tscn"
 
 [dialogue_manager]
 
@@ -40,7 +41,7 @@ project/assembly_name="TruthSeeker"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg")
+enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg", "res://addons/ggs/plugin.cfg", "res://addons/godot-flexbox/plugin.cfg")
 
 [input]
 

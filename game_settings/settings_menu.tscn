@@ -1,0 +1,119 @@
+[gd_scene load_steps=9 format=3 uid="uid://b4oknrci8eb4b"]
+
+[ext_resource type="PackedScene" uid="uid://cha8xesfthpfk" path="res://addons/ggs/components/switch/component_switch.tscn" id="1_b8fog"]
+[ext_resource type="PackedScene" uid="uid://ds06mwhee8ygm" path="res://addons/ggs/components/slider/component_slider.tscn" id="1_nvc80"]
+[ext_resource type="Resource" uid="uid://b1p86880n2pxc" path="res://game_settings/sfx_volume_setting.tres" id="2_12oql"]
+[ext_resource type="Resource" uid="uid://brp12w8j0hn1c" path="res://game_settings/fullscreen_setting.tres" id="2_v5ggd"]
+[ext_resource type="Resource" uid="uid://bhgdpwkr5m2i5" path="res://game_settings/master_volume_setting.tres" id="3_n8tjo"]
+[ext_resource type="Resource" uid="uid://bykit603tit7i" path="res://game_settings/mute_setting.tres" id="3_tbdbp"]
+[ext_resource type="FontFile" uid="uid://b3gxby06cxsjq" path="res://assets/GUI/fonts/PixelOperator8.ttf" id="4_swylg"]
+[ext_resource type="PackedScene" uid="uid://dyoy847gclint" path="res://scenes/controls_menu.tscn" id="8_uuq3k"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TabContainer" type="TabContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.1
+anchor_right = 0.9
+anchor_bottom = 0.9
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_fonts/font = ExtResource("4_swylg")
+current_tab = 0
+
+[node name="Settings" type="TabBar" parent="TabContainer"]
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Settings"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.3
+anchor_right = 0.702
+anchor_bottom = 1.0
+offset_left = 0.320007
+offset_top = 3.2
+offset_right = -1.60321
+offset_bottom = 3.20001
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="FullscreenSetting" parent="TabContainer/Settings/VBoxContainer" instance=ExtResource("1_b8fog")]
+layout_mode = 2
+setting = ExtResource("2_v5ggd")
+apply_on_changed = true
+
+[node name="Label" type="Label" parent="TabContainer/Settings/VBoxContainer/FullscreenSetting"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_swylg")
+text = "Fullscreen"
+
+[node name="MuteSetting" parent="TabContainer/Settings/VBoxContainer" instance=ExtResource("1_b8fog")]
+layout_mode = 2
+setting = ExtResource("3_tbdbp")
+apply_on_changed = true
+
+[node name="Label" type="Label" parent="TabContainer/Settings/VBoxContainer/MuteSetting"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_swylg")
+text = "Mute"
+
+[node name="SFXHBox" type="HBoxContainer" parent="TabContainer/Settings/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabContainer/Settings/VBoxContainer/SFXHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("4_swylg")
+text = "SFX Volume"
+
+[node name="SFXVolumeSetting" parent="TabContainer/Settings/VBoxContainer/SFXHBox" instance=ExtResource("1_nvc80")]
+layout_mode = 2
+size_flags_horizontal = 3
+setting = ExtResource("2_12oql")
+apply_on_changed = true
+
+[node name="Slider" parent="TabContainer/Settings/VBoxContainer/SFXHBox/SFXVolumeSetting" index="0"]
+size_flags_horizontal = 1
+
+[node name="MasterHBox" type="HBoxContainer" parent="TabContainer/Settings/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="TabContainer/Settings/VBoxContainer/MasterHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("4_swylg")
+text = "Master Volume"
+
+[node name="MasterVolumeSetting" parent="TabContainer/Settings/VBoxContainer/MasterHBox" instance=ExtResource("1_nvc80")]
+layout_mode = 2
+size_flags_horizontal = 3
+setting = ExtResource("3_n8tjo")
+apply_on_changed = true
+
+[node name="Slider" parent="TabContainer/Settings/VBoxContainer/MasterHBox/MasterVolumeSetting" index="0"]
+size_flags_horizontal = 1
+tooltip_text = "Volume"
+
+[node name="Controls" type="TabBar" parent="TabContainer"]
+visible = false
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_swylg")
+metadata/_tab_index = 1
+
+[node name="ScrollContainer" parent="TabContainer/Controls" instance=ExtResource("8_uuq3k")]
+layout_mode = 1
+
+[editable path="TabContainer/Settings/VBoxContainer/FullscreenSetting"]
+[editable path="TabContainer/Settings/VBoxContainer/MuteSetting"]
+[editable path="TabContainer/Settings/VBoxContainer/SFXHBox/SFXVolumeSetting"]
+[editable path="TabContainer/Settings/VBoxContainer/MasterHBox/MasterVolumeSetting"]
