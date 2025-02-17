@@ -1,0 +1,94 @@
+[gd_scene load_steps=9 format=3 uid="uid://b4oknrci8eb4b"]
+
+[ext_resource type="PackedScene" uid="uid://cha8xesfthpfk" path="res://addons/ggs/components/switch/component_switch.tscn" id="1_b8fog"]
+[ext_resource type="PackedScene" uid="uid://ds06mwhee8ygm" path="res://addons/ggs/components/slider/component_slider.tscn" id="1_nvc80"]
+[ext_resource type="Resource" uid="uid://b1p86880n2pxc" path="res://game_settings/sfx_volume_setting.tres" id="2_12oql"]
+[ext_resource type="Resource" uid="uid://brp12w8j0hn1c" path="res://game_settings/fullscreen_setting.tres" id="2_v5ggd"]
+[ext_resource type="Resource" uid="uid://bhgdpwkr5m2i5" path="res://game_settings/master_volume_setting.tres" id="3_n8tjo"]
+[ext_resource type="Resource" uid="uid://bykit603tit7i" path="res://game_settings/mute_setting.tres" id="3_tbdbp"]
+[ext_resource type="FontFile" uid="uid://b3gxby06cxsjq" path="res://assets/GUI/fonts/PixelOperator8.ttf" id="4_swylg"]
+[ext_resource type="Script" path="res://addons/godot-flexbox/flex_container.gd" id="5_ymyqf"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.3
+anchor_right = 0.7
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="FullscreenSetting" parent="VBoxContainer" instance=ExtResource("1_b8fog")]
+layout_mode = 2
+setting = ExtResource("2_v5ggd")
+apply_on_changed = true
+
+[node name="Label" type="Label" parent="VBoxContainer/FullscreenSetting"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_swylg")
+text = "Fullscreen"
+
+[node name="MuteSetting" parent="VBoxContainer" instance=ExtResource("1_b8fog")]
+layout_mode = 2
+setting = ExtResource("3_tbdbp")
+apply_on_changed = true
+
+[node name="Label" type="Label" parent="VBoxContainer/MuteSetting"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_swylg")
+text = "Mute"
+
+[node name="SFXHBox" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="MasterHBox" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="FlexContainer" type="Container" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("5_ymyqf")
+
+[node name="Label" type="Label" parent="FlexContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_swylg")
+text = "SFX Volume"
+
+[node name="SFXVolumeSetting" parent="FlexContainer" instance=ExtResource("1_nvc80")]
+layout_mode = 2
+size_flags_horizontal = 3
+setting = ExtResource("2_12oql")
+apply_on_changed = true
+
+[node name="Slider" parent="FlexContainer/SFXVolumeSetting" index="0"]
+size_flags_horizontal = 1
+
+[node name="Label2" type="Label" parent="FlexContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_swylg")
+text = "Master Volume"
+
+[node name="MasterVolumeSetting" parent="FlexContainer" instance=ExtResource("1_nvc80")]
+layout_mode = 2
+size_flags_horizontal = 3
+setting = ExtResource("3_n8tjo")
+apply_on_changed = true
+
+[node name="Slider" parent="FlexContainer/MasterVolumeSetting" index="0"]
+size_flags_horizontal = 1
+tooltip_text = "Volume"
+
+[editable path="VBoxContainer/FullscreenSetting"]
+[editable path="VBoxContainer/MuteSetting"]
+[editable path="FlexContainer/SFXVolumeSetting"]
+[editable path="FlexContainer/MasterVolumeSetting"]

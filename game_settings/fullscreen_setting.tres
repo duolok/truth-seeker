@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="settingDisplayFullscreen" load_steps=2 format=3 uid="uid://brp12w8j0hn1c"]
+
+[ext_resource type="Script" path="res://addons/ggs/templates/display/setting_display_fullscreen.gd" id="1_vm6o4"]
+
+[resource]
+resource_name = "fullscreen_setting"
+script = ExtResource("1_vm6o4")
+read_only_properties = PackedStringArray("value_type", "value_hint", "value_hint_string")
+default = true
+section = "display"
+key = "fullscreen_setting"
+value_type = 1
+value_hint = 0
+value_hint_string = ""

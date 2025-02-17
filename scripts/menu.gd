@@ -6,6 +6,7 @@ extends Control
 @onready var controls_menu: ScrollContainer = $ControlsMenu
 @export var is_in_game: bool = true
 @onready var resume: Button = $MainMenu/Resume
+@onready var settings_menu: Control = $SettingsMenu
 
 func _ready() -> void:
 	if is_in_game:
@@ -27,11 +28,11 @@ func _on_quit_button_pressed() -> void:
 
 func _on_options_button_pressed() -> void:
 	main_menu.visible = !main_menu.visible
-	controls_menu.visible = !controls_menu.visible
+	settings_menu.visible = !settings_menu.visible
 	back_button.visible = !back_button.visible
 
 
 func _on_back_button_pressed() -> void:
-	controls_menu.visible = !controls_menu.visible
+	settings_menu.visible = !settings_menu.visible
 	back_button.visible = !back_button.visible
 	main_menu.visible = !main_menu.visible
